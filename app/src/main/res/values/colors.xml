@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#336B87</color>
+    <color name="colorPrimaryDark">#336B87</color>
+    <color name="colorAccent">#336B87</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorWhiteTransparent">#79FFFFFF</color>
+    <color name="grayWhite">#F1F1F1</color>
+    <color name="gray">#57271D1D</color>
+    <color name="cardBg">#20D5CBCB</color>
+    <color name="facebook_color">#3b5998 </color>
+    <color name="updateBtnColor">#00BCD4</color>
+    <color name="greenColor">#008000</color>
+    <color name="colorWaveStart">#336B87</color>
+    <color name="colorWaveClose">#336B87</color>
+    <color name="colorRed">#FF0000</color>
+</resources>

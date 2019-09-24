@@ -1,0 +1,31 @@
+<resources>
+
+    <string name="app_name">E-Garments</string>
+    <string name="FACEBOOK_APP_ID">370896460480512</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">079c40360bd82dd9ae882070e7054a69</string>
+    <string name="ak_login_protocol_scheme">ak079c40360bd82dd9ae882070e7054a69</string>
+    <string name="basic_account_text">This account has many opportunity.  \n If you want you will crate\n a basiv account.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+
+    <string name="forgot_pwd"><u>Forgot Password?</u></string>
+    <string name="or">-----------------or-----------------</string>
+    <string name="title_activity_user_profile">UserProfileActivity</string>
+    <string name="title_assistant">Assistant</string>
+    <string name="title_news">News</string>
+    <string name="title_premium">Premium</string>
+    <string name="title_settings">Settings</string>
+    <string name="_30">30</string>
+    <string name="verification">verification</string>
+    <string name="uploaded">Uploaded</string>
+    <string name="_90">90</string>
+    <string name="post">Post</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="profile">Profile</string>
+
+</resources>
