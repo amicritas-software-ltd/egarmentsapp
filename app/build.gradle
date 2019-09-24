@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     defaultConfig {
         applicationId "com.amicritas.e_graments"
         minSdkVersion 17
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -29,7 +29,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta2'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0-alpha04'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0-alpha05'
     implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
@@ -40,7 +40,7 @@ dependencies {
     implementation 'com.google.android:flexbox:1.1.0'
 
     //Facebook kit
-    implementation 'com.facebook.android:account-kit-sdk:5.+'
+    implementation 'com.facebook.android:account-kit-sdk:5.4.0'
 
     //Butter Knife
     implementation 'com.jakewharton:butterknife:10.1.0'
@@ -52,6 +52,7 @@ dependencies {
     implementation 'me.spark:submitbutton:1.0.1'
 
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
+    //noinspection GradleCompatible
     implementation 'com.android.support:support-vector-drawable:28.0.0'
 
     //Circle image
