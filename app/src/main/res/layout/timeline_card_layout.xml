@@ -6,11 +6,15 @@
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="5dp">
+            app:cardCornerRadius="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -20,13 +24,13 @@
                     android:layout_width="0dp"
                     android:layout_weight="2"
                     android:layout_height="match_parent"
-                    android:padding="5dp"
                     android:orientation="vertical">
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
                         android:layout_height="140dp"
                         app:cardCornerRadius="10dp">
                         <ImageView
+                            android:id="@+id/ivProductImg"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/img_zipper2"
@@ -36,23 +40,29 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:gravity="bottom||center"
+                            android:gravity="bottom"
                             android:layout_marginBottom="10dp">
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:paddingLeft="15dp"
-                                android:paddingRight="15dp"
-                                android:gravity="clip_horizontal"
-                                android:background="@drawable/price_background">
-
-                                <TextView
+                                android:gravity="center">
+                                <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="10৳"
-                                    android:textColor="@color/white"
-                                    android:textStyle="bold"
-                                    android:textSize="18sp"/>
+                                    android:paddingLeft="15dp"
+                                    android:paddingRight="15dp"
+                                    android:gravity="clip_horizontal"
+                                    android:background="@drawable/price_background">
+
+                                    <TextView
+                                        android:id="@+id/tvProductPrice"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="10৳"
+                                        android:textColor="@color/white"
+                                        android:textStyle="bold"
+                                        android:textSize="18sp"/>
+                                </LinearLayout>
                             </LinearLayout>
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
@@ -76,11 +86,13 @@
                             android:gravity="end"
                             android:layout_marginRight="5dp">
                             <ImageView
+                                android:id="@+id/ivAddFavorite"
                                 android:layout_width="25dp"
                                 android:layout_height="25dp"
                                 app:srcCompat="@drawable/ic_favorite_red"
                                 android:layout_marginEnd="5dp"/>
                             <ImageView
+                                android:id="@+id/ivAddFlag"
                                 android:layout_width="25dp"
                                 android:layout_height="25dp"
                                 app:srcCompat="@drawable/ic_flag_black"/>
@@ -94,6 +106,7 @@
                                 android:gravity="bottom">
 
                                 <TextView
+                                    android:id="@+id/tvProductCategory"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:text="Accessories"
@@ -104,6 +117,7 @@
                         </LinearLayout>
                     </RelativeLayout>
                     <TextView
+                        android:id="@+id/tvProductTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Zipper"
@@ -123,11 +137,13 @@
                             android:text="Posted by "
                             android:drawableLeft="@drawable/ic_person"/>
                         <TextView
+                            android:id="@+id/tvPostAuthorName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Jon. Smith"/>
                     </LinearLayout>
                     <TextView
+                        android:id="@+id/tvPostAuthorLocation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Dhaka/Bangladesh"
@@ -146,10 +162,12 @@
                             style = "?android:attr/ratingBarStyleSmall"
                             android:rating="1"/>
                         <TextView
+                            android:id="@+id/tvRatingPoint"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="4.74"/>
                         <TextView
+                            android:id="@+id/tvRatingCount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="(52)"/>
@@ -158,6 +176,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="end">
                             <TextView
+                                android:id="@+id/tvPostTime"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="1 Day ago"
