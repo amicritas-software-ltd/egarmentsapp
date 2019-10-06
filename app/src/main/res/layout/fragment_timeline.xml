@@ -3,34 +3,205 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.TimelineFragment"
     android:orientation="vertical"
     tools:ignore="ExtraText">
-
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:padding="2dp">
-        <androidx.cardview.widget.CardView
+        android:layout_height="wrap_content"
+        android:background="#2B6885"
+        app:cardCornerRadius="10dp">
+        <ImageView
+            android:id="@+id/imgBackArrow"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:srcCompat="@drawable/ic_keyboard_arrow_left"/>
+
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <TextView
-                android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="E-garments"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+
+            />
+    </androidx.appcompat.widget.Toolbar>  <!--custom toolbar layout-->
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <LinearLayout
+            android:visibility="visible"
+            android:id="@+id/filterLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="2dp"
+            android:orientation="horizontal"
+            android:weightSum="5">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1.4"
+                android:layout_height="match_parent">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAllCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:text="Category"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nexalight"
+                    android:textAllCaps="false"
+                    android:backgroundTint="@color/colorTransparent" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1.2"
+                android:layout_height="match_parent">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:text="Location"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nexalight"
+                    android:textAllCaps="false"
+                    android:backgroundTint="@color/colorTransparent"
+                    android:background="@color/colorPrimary" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight=".9"
+                android:layout_height="match_parent">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:text="Date"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nexalight"
+                    android:textAllCaps="false"
+                    android:backgroundTint="@color/colorTransparent"
+                    android:background="@color/colorPrimary"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnMoreFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:text="More"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nexalight"
+                    android:textAllCaps="false"
+                    android:backgroundTint="@color/colorTransparent"
+                    android:background="@color/colorPrimary"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight=".5"
                 android:layout_height="match_parent"
-                android:text="for filter option design"
-                android:gravity="center"/>
-        </androidx.cardview.widget.CardView>
-    </LinearLayout> // filter option layout
+                android:gravity="end">
+                <ImageButton
+                    android:id="@+id/iBtnSearch"
+                    android:layout_width="24dp"
+                    android:padding="5dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/ic_search_black"
+                    android:layout_height="24dp"/>
+            </LinearLayout>
+        </LinearLayout> // filter option layout
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/searchLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="8">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="6.55"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp">
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/acSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Search"
+                    android:imeOptions="actionGo"
+                    android:background="@color/colorTransparent"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="5dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight=".8"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/iBtnCloseSearch"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_close_gray" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight=".65"
+                android:layout_height="match_parent"
+                android:gravity="center">
+                <ImageButton
+                    android:id="@+id/iBtnActionSearch"
+                    android:layout_width="24dp"
+                    android:padding="5dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/ic_search_black"
+                    android:layout_height="24dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvPost"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+                <pl.droidsonroids.gif.GifImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/loader"/>
+            </LinearLayout>
+            <com.mlsdev.animatedrv.AnimatedRecyclerView
+                android:id="@+id/rvPost"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:animationDuration="600"
+                app:layoutAnimation="@anim/layout_animation_from_bottom"
+                app:layoutManagerOrientation="vertical"
+                app:layoutManagerReverse="false"
+                app:layoutManagerType="linear">
 
-        </androidx.recyclerview.widget.RecyclerView>
+            </com.mlsdev.animatedrv.AnimatedRecyclerView>
+        </RelativeLayout>
 
     </LinearLayout> // timeLine card layout
 

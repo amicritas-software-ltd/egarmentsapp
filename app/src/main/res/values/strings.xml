@@ -27,5 +27,10 @@
     <string name="sign_up">Sign Up</string>
     <string name="sign_in">Sign In</string>
     <string name="profile">Profile</string>
+    <string name="phone_no">Phone No</string>
+    <string name="_8942">⋮</string>
+    <string name="update">Update</string>
+    <string name="unpublished">Unpublished</string>
+    <string name="delete">Delete</string>
 
 </resources>

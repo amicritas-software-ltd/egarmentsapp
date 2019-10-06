@@ -4,30 +4,35 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 
 import com.amicritas.e_graments.R;
-import com.amicritas.e_graments.fragments.ProfileFragment;
+import com.amicritas.e_graments.fragments.UserFragment;
 import com.amicritas.e_graments.fragments.TimelineFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import butterknife.ButterKnife;
-
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView navView;
     FloatingActionButton postFloatingActionButton;
+    ImageView backArrowImg;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        backArrowImg = findViewById(R.id.imgBackArrow);
+        onBackArrow();
 
         navView = findViewById(R.id.nav_view);
         postFloatingActionButton = findViewById(R.id.floatingActionButtonAddPost);
@@ -46,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         postFloatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                openPopUp();
                 Toast.makeText(MainActivity.this, "fab clicked", Toast.LENGTH_SHORT).show();
             }
         });
@@ -66,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity( new Intent(MainActivity.this, MainActivity.class));
                     return true;
                 case R.id.navigation_news:
-                    selectedFragment = new ProfileFragment();
+                    selectedFragment = new UserFragment();
                     getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
                             selectedFragment).commit();
                     return true;
@@ -77,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
 
                 case R.id.navigation_setting:
-                    selectedFragment = new ProfileFragment();
+                    selectedFragment = new UserFragment();
                     getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
                             selectedFragment).commit();
 
@@ -90,5 +96,47 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     };
+
+
+    private void openPopUp() {
+        final AlertDialog.Builder alart = new AlertDialog.Builder(MainActivity.this);
+        View view = getLayoutInflater().inflate(R.layout.all_category_popup, null);
+
+        alart.setView(view);
+        final AlertDialog alertDialog = alart.create();
+        alertDialog.setCanceledOnTouchOutside(true);
+        alertDialog.show();
+
+        Button nextBtn = view.findViewById(R.id.btnNext);
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openPopUp2();
+                Toast.makeText(MainActivity.this, "Next clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    private void openPopUp2() {
+        final AlertDialog.Builder alart = new AlertDialog.Builder(MainActivity.this);
+        View view = getLayoutInflater().inflate(R.layout.all_category_popup2, null);
+
+        alart.setView(view);
+        final AlertDialog alertDialog = alart.create();
+        alertDialog.setCanceledOnTouchOutside(true);
+        alertDialog.show();
+
+        Button nextBtn = view.findViewById(R.id.btnNext);
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Next clicked 2", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    public void onBackArrow(){
+        //backArrowImg.setOnClickListener(view -> onBackPressed());
+    }
 
 }

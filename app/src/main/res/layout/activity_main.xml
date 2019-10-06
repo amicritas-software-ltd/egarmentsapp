@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,95 +9,57 @@
     android:orientation="vertical"
     tools:context=".activitys.MainActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#2B6885"
-        app:cardCornerRadius="10dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="E-garments"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-
-            />
-    </androidx.appcompat.widget.Toolbar>  <!--custom toolbar layout-->
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <LinearLayout
+        android:layout_height="match_parent">
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="0dp">
+            android:layout_height="match_parent">
             <FrameLayout
                 android:id="@+id/main_frame"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginBottom="50dp">
 
             </FrameLayout>
+            <FrameLayout
+                android:id="@+id/filter_frame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="100dp">
 
-        </LinearLayout>
-        <LinearLayout
+            </FrameLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButtonAddPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@id/bottom_app_bar"
+        android:src="@drawable/ic_post_white"/>
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottom_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/colorPrimary"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabCradleRoundedCornerRadius="20dp">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/nav_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="bottom">
+            app:menu="@menu/bottom_nav_menu"
+            android:backgroundTint="@color/colorTransparent"
+            android:layout_marginRight="20dp"
+            tools:ignore="UnusedAttribute"
+            app:itemIconTint="@color/colorWhite"
+            app:itemTextColor="@color/colorWhite">
 
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/nav_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-                android:elevation="4dp"
+    </com.google.android.material.bottomappbar.BottomAppBar>
 
-                app:backgroundTint="@color/colorWhite"
-                app:itemBackground="@color/colorPrimary"
-                app:itemIconTint="@color/colorWhite"
-
-                app:itemTextColor="@color/colorWhite"
-                android:layout_marginBottom="-40dp"
-                app:menu="@menu/bottom_nav_menu"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="134dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="30dp"
-                        android:background="@drawable/round_background_white"
-                        android:padding="8dp">
-
-                        <com.google.android.material.floatingactionbutton.FloatingActionButton
-                            android:id="@+id/floatingActionButtonAddPost"
-                            style="@style/Widget.MaterialComponents.FloatingActionButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|center_horizontal"
-                            app:fabAlignmentMode="center"
-                            app:fabCradleMargin="8dp"
-                            app:fabCradleRoundedCornerRadius="8dp"
-                            app:fabCradleVerticalOffset="10dp"
-                            app:layout_anchor="@color/colorWhite"
-                            app:srcCompat="@drawable/ic_post_white"
-                            tools:ignore="MissingConstraints" />
-
-                    </LinearLayout>
-                </LinearLayout>
-            </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-        </LinearLayout>
-    </RelativeLayout>
-
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

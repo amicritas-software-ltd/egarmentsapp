@@ -12,14 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".activitys.UserProfileActivity"
-            android:label="@string/title_activity_user_profile"
-            android:theme="@style/NoActionBar"></activity>
 
         <activity android:name=".activitys.UpdateProfileActivity" />
         <activity android:name=".activitys.SetPasswordActivity" />
-        <activity android:name=".activitys.ProfileActivity" />
         <activity android:name=".activitys.LoginActivity" />
         <activity android:name=".activitys.SlideActivity" />
         <activity android:name=".modals.SwipeData" />
