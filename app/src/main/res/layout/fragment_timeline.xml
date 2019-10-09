@@ -62,7 +62,7 @@
                 android:layout_weight="1.2"
                 android:layout_height="match_parent">
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnLocation"
+                    android:id="@+id/btnLocationFilter"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"

@@ -33,4 +33,7 @@
     <string name="unpublished">Unpublished</string>
     <string name="delete">Delete</string>
 
+    <string name="place_api_key">AIzaSyB9MxxJBmzLHdfsMEZSdV0vORR_MRwirPI</string>
+    <string name="title_activity_maps">Map</string>
+
 </resources>

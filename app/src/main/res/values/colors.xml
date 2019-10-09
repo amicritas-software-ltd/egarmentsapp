@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#336B87</color>
-    <color name="colorPrimaryTransprent">#46336B87</color>
     <color name="colorPrimaryDark">#336B87</color>
     <color name="colorAccent">#336B87</color>
     <color name="colorWhite">#FFFFFF</color>
@@ -16,5 +15,4 @@
     <color name="colorWaveClose">#336B87</color>
     <color name="colorRed">#FF0000</color>
     <color name="colorTransparent">#00FFFFFF</color>
-    <color name="colorPrice">#9C27B0</color>
 </resources>

@@ -24,11 +24,15 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.amicritas.e_graments.R;
+import com.amicritas.e_graments.activitys.MainActivity;
+import com.amicritas.e_graments.activitys.MapsActivity;
 import com.amicritas.e_graments.adapter.PostAdapter;
 import com.amicritas.e_graments.modals.PostDemo;
+import com.borax12.materialdaterangepicker.date.DatePickerDialog;
 import com.mlsdev.animatedrv.AnimatedRecyclerView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 
@@ -37,7 +41,7 @@ public class TimelineFragment extends Fragment {
     RecyclerView postRv;
     private List<PostDemo> postDemoList;
 
-    Button categoryTv, datefilterBtn;
+    Button categoryTv, datefilterBtn, locationFilterBtn;
     ImageButton searchViewImgBtn, closeSearchImgBtn;
     LinearLayout searchViewLayout, filterViewLayout;
     AppCompatAutoCompleteTextView searchAc;
@@ -62,12 +66,16 @@ public class TimelineFragment extends Fragment {
         closeSearchImgBtn = view.findViewById(R.id.iBtnCloseSearch);
         filterViewLayout = view.findViewById(R.id.filterLayout);
         searchViewLayout = view.findViewById(R.id.searchLayout);
+        locationFilterBtn = view.findViewById(R.id.btnLocationFilter);
         searchAc = view.findViewById(R.id.acSearch);
+
+
 
 
         setCategoryFilter();
         setDateFilter();
         setSearchView();
+        setLocationFilterView();
         if (searchAc.getText().toString().trim().isEmpty()){
             setCloseSearchView();
         }
@@ -106,6 +114,27 @@ public class TimelineFragment extends Fragment {
 
     }
 
+    private void setLocationFilterView() {
+        locationFilterBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*Intent intent  =  new Intent(getActivity().getBaseContext(),
+                        MapFilterFragment.class);
+                intent.putExtra("category", "category");
+                //categoryLayout.setVisibility(View.VISIBLE);
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.setCustomAnimations(R.anim.slide_out_bottom, R.anim.slide_out_bottom);
+
+                fragmentTransaction.remove(new TimelineFragment());
+                fragmentTransaction.replace(R.id.filter_frame, new MapFilterFragment());
+                fragmentTransaction.commit();*/
+
+                Intent intent = new Intent(getActivity(), MapsActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
     private void setCloseSearchView() {
         closeSearchImgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,7 +161,7 @@ public class TimelineFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 //dateFilterLayout.setVisibility(View.VISIBLE);
-                Intent intent  =  new Intent(getActivity().getBaseContext(),
+                /*Intent intent  =  new Intent(getActivity().getBaseContext(),
                         CategoryFragment.class);
                 intent.putExtra("date", "date");
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
@@ -141,8 +170,26 @@ public class TimelineFragment extends Fragment {
                 fragmentTransaction.remove(new TimelineFragment());
                 fragmentTransaction.replace(R.id.filter_frame, new DateFilterFragment());
                 fragmentTransaction.commit();
-                //startActivity(intent);
+                //startActivity(intent);*/
+
+                Calendar now = Calendar.getInstance();
+                DatePickerDialog dpd = DatePickerDialog.newInstance(
+                        (view1, year, monthOfYear, dayOfMonth, yearEnd, monthOfYearEnd, dayOfMonthEnd) -> getActivity(),
+                        now.get(Calendar.YEAR),
+                        now.get(Calendar.MONTH),
+                        now.get(Calendar.DAY_OF_MONTH)
+                );
+                dpd.setThemeDark(false);
+                dpd.show(getActivity().getFragmentManager()," ");
+                dpd.setOnDateSetListener(new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth, int yearEnd, int monthOfYearEnd, int dayOfMonthEnd) {
+                        Toast.makeText(getContext(), "set: "+dayOfMonth+"to"+dayOfMonthEnd, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
             }
+
         });
     }
 

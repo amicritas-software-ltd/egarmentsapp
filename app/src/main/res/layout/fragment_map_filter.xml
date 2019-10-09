@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.MapFilterFragment"
+        android:orientation="vertical"
+        android:background="@color/colorPrimary">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:cardCornerRadius="10dp">
+            <ImageView
+                android:id="@+id/imgBackArrow"
+                android:layout_width="25dp"
+                android:layout_height="27dp"
+                app:srcCompat="@drawable/ic_keyboard_arrow_left"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="E-garments"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                />
+        </androidx.appcompat.widget.Toolbar>  <!--custom toolbar layout-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <SearchView
+                android:id="@+id/searchlocationSV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:iconifiedByDefault="false"
+                android:imeOptions="actionDone"
+                android:paddingRight="10dp"
+                android:queryBackground="@android:color/transparent"
+                android:queryHint="Search location"
+                android:textSize="16sp"
+                app:queryBackground="@android:color/transparent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_below="@id/searchlocationSV"
+                android:id="@+id/locationNameRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</layout>

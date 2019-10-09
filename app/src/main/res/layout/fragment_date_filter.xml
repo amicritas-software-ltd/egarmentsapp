@@ -3,105 +3,116 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.DateFilterFragment"
     android:orientation="vertical">
 
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:cardCornerRadius="10dp">
+        <ImageView
+            android:id="@+id/imgBackArrow"
+            android:layout_width="25dp"
+            android:layout_height="27dp"
+            app:srcCompat="@drawable/ic_keyboard_arrow_left"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="E-garments"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            />
+    </androidx.appcompat.widget.Toolbar>  <!--custom toolbar layout-->
+
+    <LinearLayout
         android:id="@+id/layoutDateFilter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/white">
-        <RadioGroup
-            android:id="@+id/radioGroupDate"
+        android:background="@color/white"
+        android:gravity="center">
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/tvFromDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:text="From"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:textAllCaps="false"/>
+                    <View
+                        android:id="@+id/viewFromDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/tvToDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:text="To"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:textAllCaps="false"/>
+                    <View
+                        android:id="@+id/viewToDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <DatePicker
+            android:id="@+id/filterDatePeaker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true">
+            android:layout_marginTop="10dp"
+            />
 
-            <RadioButton
-                android:id="@+id/radioToDays"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="To Days" />
-
-            <RadioButton
-                android:id="@+id/radioThisWeek"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="This Week" />
-
-            <RadioButton
-                android:id="@+id/radioThisMonth"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="This Month" />
-        </RadioGroup>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:orientation="horizontal">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Start Date"/>
-                <com.google.android.material.button.MaterialButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="02/10/2019"
-                    android:textColor="@color/black"
-                    android:backgroundTint="@color/colorTransparent"
-                    android:textSize="20sp"/>
-            </LinearLayout>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:gravity="center"
-                android:text="To"
-                android:textSize="20sp"
-                android:layout_marginTop="10dp"
-                android:textStyle="bold"/>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Start Date"/>
-                <com.google.android.material.button.MaterialButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="02/10/2019"
-                    android:textColor="@color/black"
-                    android:backgroundTint="@color/colorTransparent"
-                    android:textSize="20sp"/>
-            </LinearLayout>
-        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="end">
+
             <com.google.android.material.button.MaterialButton
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:text="Cancel"
+                android:text="Next"
                 android:textAllCaps="false"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="10dp"
                 android:textColor="@color/black"
-                android:backgroundTint="@color/colorTransparent"/>
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Save"
-                android:textAllCaps="false"
-                android:textColor="@color/black"
-                android:layout_marginLeft="50dp"/>
+                android:id="@+id/btnGetDate"/>
         </LinearLayout>
+
+
     </LinearLayout>
     <LinearLayout
         android:id="@+id/categoryBlankLayout"
