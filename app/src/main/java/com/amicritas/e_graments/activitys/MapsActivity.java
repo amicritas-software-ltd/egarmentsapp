@@ -4,6 +4,9 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.amicritas.e_graments.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -19,30 +22,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     double lat = 23.8757163;
     double lng = 90.3947515;
+    View mapView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        //drawCircle(new LatLng(lat, lng));
     }
-
-    private void drawCircle(LatLng latLng) {
-        CircleOptions circleOptions = new CircleOptions();
-        circleOptions.center(latLng);
-        circleOptions.radius(20);
-        circleOptions.strokeColor(R.color.colorPrimary);
-        circleOptions.fillColor(0x30ff0000);
-        circleOptions.strokeWidth(2);
-        mMap.addCircle(circleOptions);
-
-    }
-
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -50,10 +40,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mMap = googleMap;
         mMap.getFocusedBuilding();
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(lat, lng);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Dhaka"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney,12.0f));
+        LatLng dhaka = new LatLng(lat, lng);
+        mMap.addMarker(new MarkerOptions().position(dhaka).title("Marker in Dhaka"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(dhaka));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(dhaka,12.0f));
+        mMap.addCircle(
+                new CircleOptions()
+                        .center(dhaka).radius(500).strokeWidth(.1f).fillColor(R.color.colorPrimary));
+        mMap.setMyLocationEnabled(true);
+        mMap.isBuildingsEnabled();
+        mMap.isIndoorEnabled();
+        mMap.getUiSettings().isTiltGesturesEnabled();
+        mMap.getUiSettings().isCompassEnabled();
+        mMap.getUiSettings().isMapToolbarEnabled();
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+        mMap.getUiSettings().isRotateGesturesEnabled();
+        mMap.getUiSettings().isScrollGesturesEnabledDuringRotateOrZoom();
     }
 }
