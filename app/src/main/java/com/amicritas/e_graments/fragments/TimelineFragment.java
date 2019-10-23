@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -20,12 +21,17 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.amicritas.e_graments.R;
 import com.amicritas.e_graments.activitys.MainActivity;
 import com.amicritas.e_graments.activitys.MapsActivity;
+import com.amicritas.e_graments.activitys.MessengerDialogsListActivity;
+import com.amicritas.e_graments.activitys.ProductDetailsActivity;
 import com.amicritas.e_graments.adapter.PostAdapter;
 import com.amicritas.e_graments.modals.PostDemo;
 import com.borax12.materialdaterangepicker.date.DatePickerDialog;
@@ -37,14 +43,16 @@ import java.util.List;
 
 
 
-public class TimelineFragment extends Fragment {
-    RecyclerView postRv;
+public class TimelineFragment extends Fragment implements PostAdapter.PostAdapterEvent {
+    private RecyclerView postRv;
+    private TextView mainMenuTv;
     private List<PostDemo> postDemoList;
 
-    Button categoryTv, datefilterBtn, locationFilterBtn;
-    ImageButton searchViewImgBtn, closeSearchImgBtn;
-    LinearLayout searchViewLayout, filterViewLayout;
-    AppCompatAutoCompleteTextView searchAc;
+    private Button categoryTv, datefilterBtn, locationFilterBtn;
+    private ImageView messageIv;
+    private ImageButton searchViewImgBtn, closeSearchImgBtn;
+    private LinearLayout searchViewLayout, filterViewLayout;
+    private AppCompatAutoCompleteTextView searchAc;
 
 
 
@@ -68,6 +76,8 @@ public class TimelineFragment extends Fragment {
         searchViewLayout = view.findViewById(R.id.searchLayout);
         locationFilterBtn = view.findViewById(R.id.btnLocationFilter);
         searchAc = view.findViewById(R.id.acSearch);
+        mainMenuTv = view.findViewById(R.id.tvMainMenu);
+        messageIv = view.findViewById(R.id.ivMessage);
 
 
 
@@ -75,6 +85,9 @@ public class TimelineFragment extends Fragment {
         setCategoryFilter();
         setDateFilter();
         setSearchView();
+        setPopupMeny();
+        setMessage();
+
         setLocationFilterView();
         if (searchAc.getText().toString().trim().isEmpty()){
             setCloseSearchView();
@@ -90,7 +103,7 @@ public class TimelineFragment extends Fragment {
         postRv = view.findViewById(R.id.rvPost);
         postRv.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        final PostAdapter postAdapter = new PostAdapter(postDemoList);
+        final PostAdapter postAdapter = new PostAdapter(this, postDemoList);
         AnimatedRecyclerView recyclerView = new AnimatedRecyclerView.Builder(view.getContext())
                 .orientation(LinearLayoutManager.VERTICAL)
                 .layoutManagerType(AnimatedRecyclerView.LayoutManagerType.LINEAR)
@@ -114,21 +127,48 @@ public class TimelineFragment extends Fragment {
 
     }
 
+    private void setMessage() {
+        messageIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MessengerDialogsListActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void setPopupMeny() {
+        mainMenuTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu popupMenu = new PopupMenu(v.getContext(), mainMenuTv);
+                popupMenu.inflate(R.menu.my_post_menu);
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        switch (menuItem.getItemId()){
+                            case R.id.menu_post_update:
+                                Toast.makeText(v.getContext(), "Update", Toast.LENGTH_SHORT).show();
+                                break;
+                            case R.id.menu_post_unpublished:
+                                Toast.makeText(v.getContext(), "Unpublished", Toast.LENGTH_SHORT).show();
+                                break;
+                            case R.id.menu_post_delete:
+                                Toast.makeText(v.getContext(), "Delete", Toast.LENGTH_SHORT).show();
+                                break;
+                        }
+                        return false;
+                    }
+                });
+                popupMenu.show();
+            }
+        });
+    }
+
     private void setLocationFilterView() {
         locationFilterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*Intent intent  =  new Intent(getActivity().getBaseContext(),
-                        MapFilterFragment.class);
-                intent.putExtra("category", "category");
-                //categoryLayout.setVisibility(View.VISIBLE);
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.setCustomAnimations(R.anim.slide_out_bottom, R.anim.slide_out_bottom);
-
-                fragmentTransaction.remove(new TimelineFragment());
-                fragmentTransaction.replace(R.id.filter_frame, new MapFilterFragment());
-                fragmentTransaction.commit();*/
-
                 Intent intent = new Intent(getActivity(), MapsActivity.class);
                 startActivity(intent);
             }
@@ -266,4 +306,16 @@ public class TimelineFragment extends Fragment {
         }
     };
 
+    @Override
+    public void onProductClicked(PostDemo postDemo) {
+
+        /*FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.slide_in_bottom, R.anim.slide_out_bottom);
+        fragmentTransaction.remove(new TimelineFragment());
+        fragmentTransaction.replace(R.id.product_details_frame, new ProductDetilsFragment());
+        fragmentTransaction.commit();*/
+
+        Intent intent = new Intent(getContext(), ProductDetailsActivity.class);
+        startActivity(intent);
+    }
 }

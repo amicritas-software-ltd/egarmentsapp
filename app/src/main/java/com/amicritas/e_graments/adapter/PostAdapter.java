@@ -1,6 +1,8 @@
 package com.amicritas.e_graments.adapter;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +12,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.amicritas.e_graments.R;
+import com.amicritas.e_graments.activitys.MapsActivity;
+import com.amicritas.e_graments.fragments.CategoryFragment;
+import com.amicritas.e_graments.fragments.ProductDetilsFragment;
+import com.amicritas.e_graments.fragments.TimelineFragment;
 import com.amicritas.e_graments.modals.PostDemo;
 
 import java.util.List;
@@ -24,9 +34,12 @@ import static com.amicritas.e_graments.R.drawable.not_intersted_black;
 import static com.amicritas.e_graments.R.drawable.not_intersted_gray;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
+
+    private PostAdapterEvent postAdapterEvent;
     private List<PostDemo> postDemoList;
 
-    public PostAdapter(List<PostDemo> postDemoList) {
+    public PostAdapter(PostAdapterEvent postAdapterEvent, List<PostDemo> postDemoList) {
+        this.postAdapterEvent = postAdapterEvent;
         this.postDemoList = postDemoList;
     }
 
@@ -61,8 +74,10 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
 
         holder.addFavoriteIv.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceType")
             @Override
             public void onClick(View view) {
+
                 Toast.makeText(view.getContext(), "Favorite Clicked", Toast.LENGTH_SHORT).show();
             }
         });
@@ -70,7 +85,19 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         holder.itemLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "layout", Toast.LENGTH_SHORT).show();
+                /*FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.setCustomAnimations(R.anim.slide_out_bottom, R.anim.slide_out_bottom);
+
+                fragmentTransaction.remove(new TimelineFragment());
+                fragmentTransaction.replace(R.id.filter_frame, new CategoryFragment());
+                fragmentTransaction.commit();*/
+
+                /*Fragment fragment = new ProductDetilsFragment();
+                FragmentManager fragmentManager = ((AppCompatActivity)context).getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.main_frame, fragment)
+                        .commit();*/
+
+                postAdapterEvent.onProductClicked(postDemo);
             }
         });
     }
@@ -94,5 +121,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             productImg = itemView.findViewById(R.id.ivProductImg);
             itemLayout = itemView.findViewById(R.id.itemLayout);
         }
+    }
+    public interface PostAdapterEvent {
+        void onProductClicked(PostDemo postDemo);
     }
 }

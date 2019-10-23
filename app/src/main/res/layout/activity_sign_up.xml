@@ -8,8 +8,6 @@
     android:background="#F6F6F6"
     tools:context=".activitys.SignUpActivity">
 
-
-
     <FrameLayout
         android:id="@+id/fm1"
         android:layout_width="match_parent"
@@ -68,22 +66,30 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:errorEnabled="true"
-                app:passwordToggleEnabled="true">
+                app:errorEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edtName"
+                    android:id="@+id/edtNameReg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
                     android:hint="Name"
-                    android:inputType="number"
+                    android:inputType="textPersonName"
                     android:drawableRight="@drawable/ic_person_black_24dp"
                     android:backgroundTint="@android:color/black"
                     android:textColor="@color/black"
                     android:textColorHint="@android:color/darker_gray"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:imeOptions="actionNext"/>
+                <TextView
+                    android:id="@+id/tvErrorNameReg"
+                    android:layout_marginTop="-25dp"
+                    android:layout_marginLeft="35dp"
+                    android:textSize="11sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorRed"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -92,23 +98,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:errorEnabled="true"
-                android:layout_marginTop="12dp"
-                app:passwordToggleEnabled="true">
+                android:layout_marginTop="12dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edtPhone"
+                    android:id="@+id/edtPhoneReg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
                     android:hint="Phone No"
                     android:inputType="number"
-                    android:text=""
                     android:drawableRight="@drawable/ic_phone_black_24dp"
                     android:backgroundTint="@android:color/black"
                     android:textColor="@color/black"
                     android:textColorHint="@android:color/darker_gray"
                     android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/tvErrorPhoneReg"
+                    android:layout_marginTop="-25dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:textColor="@color/colorRed"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -121,6 +133,7 @@
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtpasswordReg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
@@ -129,6 +142,14 @@
                     android:backgroundTint="@android:color/black"
                     android:inputType="textPassword"
                     android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/tvErrorPasswordReg"
+                    android:layout_marginTop="-25dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:textColor="@color/colorRed"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 

@@ -3,9 +3,10 @@
     <color name="colorPrimary">#336B87</color>
     <color name="colorPrimaryDark">#336B87</color>
     <color name="colorAccent">#336B87</color>
+    <color name="colorPrimaryLight">#448DB3</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorWhiteTransparent">#79FFFFFF</color>
-    <color name="grayWhite">#F1F1F1</color>
+    <color name="grayWhite">#F8F7F7</color>
     <color name="gray">#57271D1D</color>
     <color name="cardBg">#20D5CBCB</color>
     <color name="facebook_color">#3b5998 </color>
@@ -15,4 +16,7 @@
     <color name="colorWaveClose">#336B87</color>
     <color name="colorRed">#FF0000</color>
     <color name="colorTransparent">#00FFFFFF</color>
+    <color name="colorViolet">#590D83</color>
+    <color name="colourGrayTransparent">#79000000</color>
+    <color name="colourBlack">#000000</color>
 </resources>
