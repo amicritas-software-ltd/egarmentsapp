@@ -48,10 +48,9 @@ public class TimelineFragment extends Fragment implements PostAdapter.PostAdapte
     private TextView mainMenuTv;
     private List<PostDemo> postDemoList;
 
-    private Button categoryTv, datefilterBtn, locationFilterBtn;
     private ImageView messageIv;
     private ImageButton searchViewImgBtn, closeSearchImgBtn;
-    private LinearLayout searchViewLayout, filterViewLayout;
+    private LinearLayout searchViewLayout,categoryTv, filterViewLayout, datefilterBtn, locationFilterBtn;
     private AppCompatAutoCompleteTextView searchAc;
 
 
@@ -219,6 +218,8 @@ public class TimelineFragment extends Fragment implements PostAdapter.PostAdapte
                         now.get(Calendar.MONTH),
                         now.get(Calendar.DAY_OF_MONTH)
                 );
+                //dpd.setAccentColor(R.color.black);
+                dpd.setAccentColor(R.color.white_two);
                 dpd.setThemeDark(false);
                 dpd.show(getActivity().getFragmentManager()," ");
                 dpd.setOnDateSetListener(new DatePickerDialog.OnDateSetListener() {
@@ -266,7 +267,7 @@ public class TimelineFragment extends Fragment implements PostAdapter.PostAdapte
                 intent.putExtra("category", "category");
                 //categoryLayout.setVisibility(View.VISIBLE);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.setCustomAnimations(R.anim.slide_out_bottom, R.anim.slide_out_bottom);
+                fragmentTransaction.setCustomAnimations(R.anim.slide_open_bottom, R.anim.slide_open_top);
 
                 fragmentTransaction.remove(new TimelineFragment());
                 fragmentTransaction.replace(R.id.filter_frame, new CategoryFragment());

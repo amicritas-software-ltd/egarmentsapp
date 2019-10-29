@@ -7,16 +7,6 @@
     android:background="@android:color/white"
     tools:context=".activitys.SplashScreen">
 
-
-    <!--  <ImageView
-          android:layout_width="wrap_content"
-          android:layout_height="200dp"
-          android:layout_gravity="center"
-          android:layout_marginBottom="30dp"
-          android:src="@drawable/logo"
-          android:layout_centerInParent="true"
-          />-->
-
     <ImageView
         android:layout_width="347dp"
         android:layout_height="347dp"
@@ -48,7 +38,7 @@
             android:fontFamily="@font/nexabold"
             android:text="graments"
             android:textColor="@color/gray"
-            android:textSize="50sp" />
+            android:textSize="45sp" />
 
         <ImageView
             android:id="@+id/logo"

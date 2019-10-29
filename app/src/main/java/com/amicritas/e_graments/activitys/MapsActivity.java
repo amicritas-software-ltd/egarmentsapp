@@ -47,7 +47,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addCircle(
                 new CircleOptions()
                         .center(dhaka).radius(500).strokeWidth(.1f).fillColor(R.color.colorPrimary));
-        mMap.setMyLocationEnabled(true);
+        //mMap.setMyLocationEnabled(true);
         mMap.isBuildingsEnabled();
         mMap.isIndoorEnabled();
         mMap.getUiSettings().isTiltGesturesEnabled();

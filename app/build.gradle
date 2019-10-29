@@ -66,8 +66,6 @@ dependencies {
     //recyclerview animation
     implementation "com.mlsdev.animatedrv:library:2.0.0"
 
-    //implementation project(':library')
-
     //wave
     implementation 'com.scwang.wave:MultiWaveHeader:1.0.0-alpha-1'
 

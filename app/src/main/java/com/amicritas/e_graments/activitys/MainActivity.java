@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
         postFloatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openPopUp();
-                Toast.makeText(MainActivity.this, "fab clicked", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, PostActivity.class));
+                //openPopUp();
             }
         });
     }
@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_assistant:
                     // mTextMessage.setText(R.string.title_assistant);
-                    Toast.makeText(MainActivity.this, "click assistant", Toast.LENGTH_SHORT).show();
 
                     startActivity( new Intent(MainActivity.this, MainActivity.class));
                     return true;
@@ -111,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                alertDialog.dismiss();
                 openPopUp2();
                 Toast.makeText(MainActivity.this, "Next clicked", Toast.LENGTH_SHORT).show();
             }
