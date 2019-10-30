@@ -154,12 +154,12 @@
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/iBtnSearch"
                 android:layout_width="0dp"
                 android:layout_weight=".6"
                 android:layout_height="match_parent"
                 android:gravity="end">
                 <ImageButton
-                    android:id="@+id/iBtnSearch"
                     android:layout_width="24dp"
                     android:padding="5dp"
                     android:layout_gravity="center"
@@ -188,9 +188,15 @@
                     android:imeOptions="actionGo"
                     android:background="@color/colorTransparent"
                     android:paddingRight="5dp"
-                    android:paddingLeft="5dp"/>
+                    android:paddingLeft="5dp"
+                    android:cursorVisible="true"
+                    android:focusable="true"
+                    android:focusedByDefault="true"
+                    android:singleLine="true"
+                    android:focusableInTouchMode="true"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/layoutCloseSearch"
                 android:layout_width="0dp"
                 android:layout_weight=".8"
                 android:layout_height="match_parent"

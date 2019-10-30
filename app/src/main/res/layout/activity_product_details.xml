@@ -10,15 +10,15 @@
     android:orientation="vertical"
     >
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
-        android:orientation="vertical"
-        android:weightSum="13">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <LinearLayout
+            android:id="@+id/layoutDetails"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="12">
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="55dp">
             <androidx.coordinatorlayout.widget.CoordinatorLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -192,115 +192,125 @@
                     layout="@layout/product_details_layout"
                     android:layout_width="match_parent"
                     android:layout_height="fill_parent"
-                    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+                    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+                    android:layout_marginBottom="60dp"/>
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:layout_margin="5dp"
-            android:background="@color/colorPrimary">
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <LinearLayout
+            android:layout_height="match_parent"
+            android:gravity="bottom">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingTop="5dp">
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center">
+                    android:layout_height="match_parent">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal"
-                        android:padding="5dp"
-                        android:weightSum="3"
                         android:gravity="center">
-
                         <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="40dp"
-                            android:layout_weight="1"
-                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:orientation="horizontal"
-                            android:background="@drawable/icon_background"
-                            style="?android:attr/buttonBarButtonStyle">
+                            android:weightSum="3"
+                            android:paddingTop="5dp"
+                            android:paddingLeft="5dp"
+                            android:paddingBottom="5dp"
+                            android:paddingRight="5dp"
+                            android:gravity="center">
 
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-                                <LinearLayout
-                                    android:id="@+id/layoutMessage"
-                                    style="?android:attr/buttonBarButtonStyle"
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:background="@drawable/icon_background"
+                                style="?android:attr/buttonBarButtonStyle">
+
+                                <RelativeLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:orientation="horizontal"
-                                    android:gravity="center">
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="@font/nexabold"
-                                        android:text="Message"
-                                        android:textColor="@color/white"/>
-                                    <ImageView
-                                        android:layout_width="24dp"
-                                        android:layout_height="24dp"
-                                        app:srcCompat="@drawable/ic_messenger" />
-                                </LinearLayout>
-                            </RelativeLayout>
+                                    android:layout_height="match_parent">
+                                    <LinearLayout
+                                        android:id="@+id/layoutMessage"
+                                        style="?android:attr/buttonBarButtonStyle"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/nexabold"
+                                            android:text="Message"
+                                            android:textColor="@color/white"/>
+                                        <ImageView
+                                            android:layout_width="24dp"
+                                            android:layout_height="24dp"
+                                            app:srcCompat="@drawable/ic_messenger" />
+                                    </LinearLayout>
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                style="?android:attr/buttonBarButtonStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/icon_background">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nexabold"
+                                    android:text="Email"
+                                    android:textColor="@color/white"
+                                    android:layout_marginRight="5dp"/>
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    app:srcCompat="@drawable/ic_email" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                style="?android:attr/buttonBarButtonStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:background="@drawable/icon_background">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nexabold"
+                                    android:textColor="@color/white"
+                                    android:text="Order" />
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    app:srcCompat="@drawable/ic_order" />
+                            </LinearLayout>
+
 
                         </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="40dp"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:orientation="horizontal"
-                            android:layout_marginRight="10dp"
-                            android:layout_marginLeft="10dp"
-                            android:background="@drawable/icon_background">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/nexabold"
-                                android:text="Email"
-                                android:textColor="@color/white"
-                                android:layout_marginRight="5dp"/>
-                            <ImageView
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
-                                app:srcCompat="@drawable/ic_email" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="40dp"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:orientation="horizontal"
-                            android:background="@drawable/icon_background">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/nexabold"
-                                android:textColor="@color/white"
-                                android:text="Order" />
-                            <ImageView
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
-                                app:srcCompat="@drawable/ic_order" />
-                        </LinearLayout>
-
-
                     </LinearLayout>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>
 

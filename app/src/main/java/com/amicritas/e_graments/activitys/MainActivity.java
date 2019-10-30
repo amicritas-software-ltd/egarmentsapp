@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 
@@ -21,9 +22,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
-    BottomNavigationView navView;
     FloatingActionButton postFloatingActionButton;
     ImageView backArrowImg;
+    LinearLayout layoutProfile, layoutHome;
+    Fragment selectedFragment = null;
 
 
     @Override
@@ -31,10 +33,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        layoutProfile = findViewById(R.id.layoutProfile);
+        layoutHome = findViewById(R.id.layoutHome);
         backArrowImg = findViewById(R.id.imgBackArrow);
-        onBackArrow();
 
-        navView = findViewById(R.id.nav_view);
+        onBackArrow();
+        setProfile();
+        setHome();
+
         postFloatingActionButton = findViewById(R.id.floatingActionButtonAddPost);
 
         if (savedInstanceState == null) {
@@ -44,7 +50,29 @@ public class MainActivity extends AppCompatActivity {
 
         onfloatingActionButton();
 
-        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+    }
+
+    private void setHome() {
+        layoutHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedFragment = new TimelineFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
+                        selectedFragment).commit();
+            }
+        });
+
+    }
+
+    private void setProfile() {
+        layoutProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedFragment = new UserFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
+                        selectedFragment).commit();
+            }
+        });
     }
 
     private void onfloatingActionButton() {
@@ -57,12 +85,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+    /*private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment selectedFragment = null;
+
 
             switch (item.getItemId()) {
                 case R.id.navigation_assistant:
@@ -82,9 +110,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
 
                 case R.id.navigation_setting:
-                    selectedFragment = new UserFragment();
-                    getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
-                            selectedFragment).commit();
+
 
                     return true;
 
@@ -94,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
 
             return false;
         }
-    };
+    };*/
 
 
     private void openPopUp() {

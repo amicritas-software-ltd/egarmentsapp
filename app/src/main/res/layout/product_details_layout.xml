@@ -222,7 +222,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
                                 android:layout_marginTop="10dp"
-                                android:text="Details"
+                                android:text="Product details"
                                 android:textSize="25sp" />
 
                             <TextView
@@ -236,10 +236,12 @@
                                 android:text="@string/this_pocketing"
                                 android:textSize="18sp" />
                         </LinearLayout>
+
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="50dp"
+                            android:layout_marginLeft="20dp"
                             android:layout_marginRight="20dp"
                             android:orientation="vertical">
 
@@ -247,18 +249,22 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
-                                android:layout_marginBottom="10dp"
-                                android:weightSum="2">
+                                android:weightSum="2"
+                                android:background="@color/grayWhite">
 
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:orientation="horizontal">
+                                    android:orientation="horizontal"
+                                    android:layout_marginLeft="10dp"
+                                    android:gravity="center_vertical"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginBottom="8dp">
 
                                     <ImageView
-                                        android:layout_width="25dp"
-                                        android:layout_height="25dp"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
                                         app:srcCompat="@drawable/ic_product_icon" />
 
                                     <TextView
@@ -266,38 +272,44 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="10dp"
                                         android:text="Type"
-                                        android:textSize="18sp" />
+                                        android:textSize="15sp"
+                                        android:fontFamily="@font/nexalight"/>
                                 </LinearLayout>
 
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1">
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical">
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Accessories"
-                                        android:textSize="18sp" />
+                                        android:textSize="15sp"
+                                        android:fontFamily="@font/nexalight"/>
                                 </LinearLayout>
                             </LinearLayout>
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginBottom="10dp"
-                                android:weightSum="2">
+                                android:weightSum="2"
+                                android:gravity="center_vertical">
 
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:orientation="horizontal">
+                                    android:orientation="horizontal"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:gravity="center_vertical">
 
                                     <ImageView
-                                        android:layout_width="25dp"
-                                        android:layout_height="25dp"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
                                         app:srcCompat="@drawable/ic_product_icon" />
 
                                     <TextView
@@ -305,38 +317,45 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="10dp"
                                         android:text="Pattern"
-                                        android:textSize="18sp" />
+                                        android:textSize="15sp"
+                                        android:fontFamily="@font/nexalight"/>
                                 </LinearLayout>
 
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1">
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical">
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Plain"
-                                        android:textSize="18sp" />
+                                        android:textSize="15sp"
+                                        android:fontFamily="@font/nexalight"/>
                                 </LinearLayout>
                             </LinearLayout>
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginBottom="10dp"
-                                android:weightSum="2">
+                                android:weightSum="2"
+                                android:background="@color/grayWhite">
 
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:orientation="horizontal">
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    >
 
                                     <ImageView
-                                        android:layout_width="25dp"
-                                        android:layout_height="25dp"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
                                         app:srcCompat="@drawable/ic_product_icon" />
 
                                     <TextView
@@ -344,38 +363,43 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="10dp"
                                         android:text="Fabric Type"
-                                        android:textSize="18sp" />
+                                        android:textSize="15sp"
+                                        android:fontFamily="@font/nexalight"/>
                                 </LinearLayout>
 
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1">
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical">
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Cotton Fabric"
-                                        android:textSize="18sp" />
+                                        android:textSize="15sp"
+                                        android:fontFamily="@font/nexalight"/>
                                 </LinearLayout>
                             </LinearLayout>
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginBottom="10dp"
                                 android:weightSum="2">
 
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:orientation="horizontal">
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginBottom="8dp">
 
                                     <ImageView
-                                        android:layout_width="25dp"
-                                        android:layout_height="25dp"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
                                         app:srcCompat="@drawable/ic_product_icon" />
 
                                     <TextView
@@ -383,38 +407,44 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="10dp"
                                         android:text="Width"
-                                        android:textSize="18sp" />
+                                        android:textSize="15sp"
+                                        android:fontFamily="@font/nexalight"/>
                                 </LinearLayout>
 
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1">
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical">
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="60 inch"
-                                        android:textSize="18sp" />
+                                        android:textSize="15sp"
+                                        android:fontFamily="@font/nexalight"/>
                                 </LinearLayout>
                             </LinearLayout>
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginBottom="10dp"
-                                android:weightSum="2">
+                                android:weightSum="2"
+                                android:background="@color/grayWhite">
 
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:orientation="horizontal">
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginBottom="8dp">
 
                                     <ImageView
-                                        android:layout_width="25dp"
-                                        android:layout_height="25dp"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
                                         app:srcCompat="@drawable/ic_product_icon" />
 
                                     <TextView
@@ -422,38 +452,43 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="10dp"
                                         android:text="Length"
-                                        android:textSize="18sp" />
+                                        android:textSize="15sp"
+                                        android:fontFamily="@font/nexalight"/>
                                 </LinearLayout>
 
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1">
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical">
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="100 cm"
-                                        android:textSize="18sp" />
+                                        android:textSize="15sp"
+                                        android:fontFamily="@font/nexalight"/>
                                 </LinearLayout>
                             </LinearLayout>
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginBottom="10dp"
                                 android:weightSum="2">
 
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:orientation="horizontal">
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginBottom="8dp">
 
                                     <ImageView
-                                        android:layout_width="25dp"
-                                        android:layout_height="25dp"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
                                         app:srcCompat="@drawable/ic_product_icon" />
 
                                     <TextView
@@ -461,38 +496,44 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="10dp"
                                         android:text="Brand"
-                                        android:textSize="18sp" />
+                                        android:textSize="15sp"
+                                        android:fontFamily="@font/nexalight"/>
                                 </LinearLayout>
 
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1">
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical">
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Megh Texofin"
-                                        android:textSize="18sp" />
+                                        android:textSize="15sp"
+                                        android:fontFamily="@font/nexalight"/>
                                 </LinearLayout>
                             </LinearLayout>
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginBottom="10dp"
-                                android:weightSum="2">
+                                android:weightSum="2"
+                                android:background="@color/grayWhite">
 
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:orientation="horizontal">
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginBottom="8dp">
 
                                     <ImageView
-                                        android:layout_width="25dp"
-                                        android:layout_height="25dp"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
                                         app:srcCompat="@drawable/ic_product_icon" />
 
                                     <TextView
@@ -500,26 +541,28 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="10dp"
                                         android:text="Minimum Order Quantity"
-                                        android:textSize="18sp" />
+                                        android:textSize="15sp"
+                                        android:fontFamily="@font/nexalight"/>
                                 </LinearLayout>
 
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1">
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical">
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="800 Meter"
-                                        android:textSize="18sp" />
+                                        android:textSize="15sp"
+                                        android:fontFamily="@font/nexalight"/>
                                 </LinearLayout>
                             </LinearLayout>
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
                                 android:layout_marginBottom="10dp"
                                 android:weightSum="2">
 
@@ -527,11 +570,15 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:orientation="horizontal">
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginBottom="8dp">
 
                                     <ImageView
-                                        android:layout_width="25dp"
-                                        android:layout_height="25dp"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
                                         app:srcCompat="@drawable/ic_location_on" />
 
                                     <TextView
@@ -539,19 +586,22 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="10dp"
                                         android:text="Location"
-                                        android:textSize="18sp" />
+                                        android:textSize="15sp"
+                                        android:fontFamily="@font/nexalight"/>
                                 </LinearLayout>
 
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1">
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical">
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Uttara,Dhaka/Bangladesh"
-                                        android:textSize="18sp" />
+                                        android:textSize="15sp"
+                                        android:fontFamily="@font/nexalight"/>
                                 </LinearLayout>
                             </LinearLayout>
                         </LinearLayout>
@@ -559,42 +609,6 @@
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginTop="10dp"
-                            android:text="Product Description"
-                            android:textSize="25sp" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="20dp"
-                            android:layout_marginBottom="20dp"
-                            android:fontFamily="@font/nexalight"
-                            android:text="@string/we_manufacturar"
-                            android:textSize="18sp" />
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
 
             <LinearLayout

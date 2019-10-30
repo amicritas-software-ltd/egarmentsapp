@@ -49,8 +49,8 @@ public class TimelineFragment extends Fragment implements PostAdapter.PostAdapte
     private List<PostDemo> postDemoList;
 
     private ImageView messageIv;
-    private ImageButton searchViewImgBtn, closeSearchImgBtn;
-    private LinearLayout searchViewLayout,categoryTv, filterViewLayout, datefilterBtn, locationFilterBtn;
+    private ImageButton closeSearchImgBtn;
+    private LinearLayout searchViewLayout,categoryTv, filterViewLayout, datefilterBtn, locationFilterBtn,layoutCloseSearch, searchViewImgBtn;
     private AppCompatAutoCompleteTextView searchAc;
 
 
@@ -77,6 +77,7 @@ public class TimelineFragment extends Fragment implements PostAdapter.PostAdapte
         searchAc = view.findViewById(R.id.acSearch);
         mainMenuTv = view.findViewById(R.id.tvMainMenu);
         messageIv = view.findViewById(R.id.ivMessage);
+        layoutCloseSearch = view.findViewById(R.id.layoutCloseSearch);
 
 
 
@@ -175,7 +176,7 @@ public class TimelineFragment extends Fragment implements PostAdapter.PostAdapte
     }
 
     private void setCloseSearchView() {
-        closeSearchImgBtn.setOnClickListener(new View.OnClickListener() {
+        layoutCloseSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 searchViewLayout.setVisibility(View.GONE);
@@ -190,6 +191,8 @@ public class TimelineFragment extends Fragment implements PostAdapter.PostAdapte
             public void onClick(View view) {
                 filterViewLayout.setVisibility(View.GONE);
                 searchViewLayout.setVisibility(View.VISIBLE);
+                //searchAc.setFocusable(true);
+                searchAc.callOnClick();
             }
         });
     }
