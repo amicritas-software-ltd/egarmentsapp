@@ -1,17 +1,21 @@
 package com.amicritas.e_graments.fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.amicritas.e_graments.R;
+import com.amicritas.e_graments.activitys.ProductDetailsActivity;
 import com.amicritas.e_graments.adapter.MyPostAdapter;
 import com.amicritas.e_graments.adapter.PostAdapter;
 import com.amicritas.e_graments.modals.PostDemo;
@@ -23,9 +27,10 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MyPostFragment extends Fragment {
+public class MyPostFragment extends Fragment implements MyPostAdapter.PostAdapterEvent{
     RecyclerView postRv;
     private List<PostDemo> postDemoList;
+    ImageView imgBackArrow;
 
 
     public MyPostFragment() {
@@ -38,6 +43,10 @@ public class MyPostFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_my_post, container, false);
+
+        imgBackArrow = view.findViewById(R.id.imgBackArrow);
+
+        setBackPress();
 
         postDemoList = new ArrayList<>();
 
@@ -62,7 +71,7 @@ public class MyPostFragment extends Fragment {
         postRv = view.findViewById(R.id.rvPost);
         postRv.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        final MyPostAdapter myPostAdapter = new MyPostAdapter(postDemoList, getContext());
+        final MyPostAdapter myPostAdapter = new MyPostAdapter(this,postDemoList,getContext());
         postRv.setAdapter(myPostAdapter);
 
         AnimatedRecyclerView recyclerView = new AnimatedRecyclerView.Builder(view.getContext())
@@ -77,4 +86,18 @@ public class MyPostFragment extends Fragment {
         return view;
     }
 
+    private void setBackPress() {
+        imgBackArrow.setOnClickListener(v -> {
+            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+            fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            fragmentTransaction.replace(R.id.main_frame, new UserFragment());
+            fragmentTransaction.commit();
+        });
+    }
+
+    @Override
+    public void onProductClicked(PostDemo postDemo) {
+        Intent intent = new Intent(getContext(), ProductDetailsActivity.class);
+        startActivity(intent);
+    }
 }

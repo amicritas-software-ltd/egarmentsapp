@@ -14,7 +14,7 @@
             app:cardCornerRadius="5dp">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="130dp"
                 android:orientation="horizontal"
                 android:weightSum="5">
                 <LinearLayout
@@ -28,37 +28,32 @@
                         <ImageView
                             android:id="@+id/ivProductImg"
                             android:layout_width="match_parent"
-                            android:layout_height="140dp"
+                            android:layout_height="match_parent"
                             android:src="@drawable/img_zipper2"
                             android:scaleType="fitXY"
                             android:padding="5dp"
                             />
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="bottom"
+                            android:layout_height="match_parent"
+                            android:gravity="bottom|center"
                             android:layout_marginBottom="10dp">
                             <LinearLayout
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center">
-                                <LinearLayout
+                                android:paddingLeft="15dp"
+                                android:paddingRight="15dp"
+                                android:gravity="clip_horizontal"
+                                android:background="@drawable/price_background">
+
+                                <TextView
+                                    android:id="@+id/tvProductPrice"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:paddingLeft="15dp"
-                                    android:paddingRight="15dp"
-                                    android:gravity="clip_horizontal"
-                                    android:background="@drawable/price_background">
-
-                                    <TextView
-                                        android:id="@+id/tvProductPrice"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="10৳"
-                                        android:textColor="@color/white"
-                                        android:textStyle="bold"
-                                        android:textSize="18sp"/>
-                                </LinearLayout>
+                                    android:text="10৳"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold"
+                                    android:textSize="18sp"/>
                             </LinearLayout>
                         </LinearLayout>
                     </RelativeLayout>

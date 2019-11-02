@@ -85,18 +85,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         holder.itemLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.setCustomAnimations(R.anim.slide_out_bottom, R.anim.slide_out_bottom);
-
-                fragmentTransaction.remove(new TimelineFragment());
-                fragmentTransaction.replace(R.id.filter_frame, new CategoryFragment());
-                fragmentTransaction.commit();*/
-
-                /*Fragment fragment = new ProductDetilsFragment();
-                FragmentManager fragmentManager = ((AppCompatActivity)context).getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.main_frame, fragment)
-                        .commit();*/
-
                 postAdapterEvent.onProductClicked(postDemo);
             }
         });

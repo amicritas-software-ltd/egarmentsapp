@@ -23,10 +23,13 @@ import org.w3c.dom.Text;
 import java.util.List;
 
 public class MyPostAdapter extends RecyclerView.Adapter<MyPostAdapter.ViewHolder> {
+    private MyPostAdapter.PostAdapterEvent postAdapterEvent;
     private List<PostDemo> postDemoList;
     private Context context;
 
-    public MyPostAdapter(List<PostDemo> postDemoList, Context context) {
+
+    public MyPostAdapter(PostAdapterEvent postAdapterEvent, List<PostDemo> postDemoList, Context context) {
+        this.postAdapterEvent = postAdapterEvent;
         this.postDemoList = postDemoList;
         this.context = context;
     }
@@ -77,7 +80,7 @@ public class MyPostAdapter extends RecyclerView.Adapter<MyPostAdapter.ViewHolder
         holder.itemLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "layout", Toast.LENGTH_SHORT).show();
+                postAdapterEvent.onProductClicked(postDemo);
             }
         });
     }
@@ -100,5 +103,8 @@ public class MyPostAdapter extends RecyclerView.Adapter<MyPostAdapter.ViewHolder
             itemLayout = itemView.findViewById(R.id.itemLayout);
             menuTv = itemView.findViewById(R.id.tvMenu);
         }
+    }
+    public interface PostAdapterEvent {
+        void onProductClicked(PostDemo postDemo);
     }
 }

@@ -1,29 +1,31 @@
 package com.amicritas.e_graments.activitys;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 import com.amicritas.e_graments.R;
+import com.amicritas.e_graments.fragments.MyProfileFragment;
 import com.amicritas.e_graments.fragments.UserFragment;
 import com.amicritas.e_graments.fragments.TimelineFragment;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.core.Context;
 
 public class MainActivity extends AppCompatActivity {
     FloatingActionButton postFloatingActionButton;
-    ImageView backArrowImg;
+    ImageView backArrowImg, ivHomeicon, ivProfileIcon, tvTextHome, tvProfileText;
     LinearLayout layoutProfile, layoutHome;
     Fragment selectedFragment = null;
 
@@ -33,9 +35,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ivProfileIcon = findViewById(R.id.ivProfileIcon);
+        ivHomeicon = findViewById(R.id.ivHomeicon);
         layoutProfile = findViewById(R.id.layoutProfile);
         layoutHome = findViewById(R.id.layoutHome);
         backArrowImg = findViewById(R.id.imgBackArrow);
+        tvTextHome = findViewById(R.id.tvTextHome);
+        tvProfileText = findViewById(R.id.tvProfileText);
 
         onBackArrow();
         setProfile();
@@ -54,9 +60,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void setHome() {
         layoutHome.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
+                tvProfileText.setImageResource(R.drawable.profile_text_white);
                 selectedFragment = new TimelineFragment();
+                ivProfileIcon.setImageResource(R.drawable.ic_person);
+                ivHomeicon.setImageResource(R.drawable.ic_home_violet);
+                tvTextHome.setImageResource(R.drawable.home_text);
                 getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
                         selectedFragment).commit();
             }
@@ -66,9 +77,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void setProfile() {
         layoutProfile.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
-                selectedFragment = new UserFragment();
+                tvTextHome.setImageResource(R.drawable.home_text_white);
+                tvProfileText.setImageResource(R.drawable.profile_text_violet);
+                ivProfileIcon.setImageResource(R.drawable.ic_person_violet);
+                ivHomeicon.setImageResource(R.drawable.ic_home_black_24dp);
+                selectedFragment = new MyProfileFragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
                         selectedFragment).commit();
             }
@@ -84,43 +100,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-    /*private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-
-            switch (item.getItemId()) {
-                case R.id.navigation_assistant:
-                    // mTextMessage.setText(R.string.title_assistant);
-
-                    startActivity( new Intent(MainActivity.this, MainActivity.class));
-                    return true;
-                case R.id.navigation_news:
-                    selectedFragment = new UserFragment();
-                    getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
-                            selectedFragment).commit();
-                    return true;
-                case R.id.navigation_premium:
-                    //  mTextMessage.setText(R.string.title_settings);
-                    Toast.makeText(MainActivity.this, "click premium", Toast.LENGTH_SHORT).show();
-
-                    return true;
-
-                case R.id.navigation_setting:
-
-
-                    return true;
-
-
-            }
-
-
-            return false;
-        }
-    };*/
 
 
     private void openPopUp() {

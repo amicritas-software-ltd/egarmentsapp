@@ -1,390 +1,262 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.MyProfileFragment"
     android:background="#F6F6F6">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:ignore="ExtraText">
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="250dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <com.scwang.wave.MultiWaveHeader
-                    android:id="@+id/waveHeader"
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    app:mwhStartColor="@color/colorWaveStart"
-                    app:mwhCloseColor="@color/colorWaveClose"
-                    app:mwhWaves="MultiWave">
-
-                </com.scwang.wave.MultiWaveHeader>
-            </LinearLayout>  <!--wave layout-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:gravity="center"
-                android:orientation="vertical">
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/profile_image"
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
-                    android:layout_marginTop="20dp"
-                    android:src="@drawable/person"
-                    app:civ_border_color="#fff"
-                    app:civ_border_width=".5dp"
-                    />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Bipul Sarkar"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/white"
-                    android:textSize="20sp"
-                    android:layout_marginBottom="50dp"/>
-            </LinearLayout>  <!--img & name layout-->
-
-        </RelativeLayout>   // header layout
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardView"
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:layout_below="@+id/waveHeader"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="-25dp"
-            android:layout_marginRight="30dp"
-            android:minHeight="200dp"
-            app:cardBackgroundColor="@color/colorWhiteTransparent"
-            app:cardCornerRadius="9dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:orientation="horizontal"
-                android:weightSum="3"
-                android:padding="5dp">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".8"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Post"
-                        android:textColor="@android:color/black"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/_30"
-                        android:textSize="18sp"
-                        tools:ignore="RtlHardcoded" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1.1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/verification"
-                        android:textColor="@android:color/black"
-                        android:textSize="20sp"
-                        tools:ignore="RtlHardcoded" />
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginTop="8dp"
-                        android:src="@drawable/non_varification_icon"
-                        app:civ_border_width=".5dp"
-                        app:civ_circle_background_color="#FF0000"
-                        tools:ignore="RtlHardcoded" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1.1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/tvMessageTotal"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/round_background_red"
-                            android:gravity="center"
-                            android:text="@string/_90"
-                            android:layout_marginStart="0dp"
-                            android:layout_alignEnd="@id/tvMessage"
-                            android:textColor="@android:color/white"
-                            android:padding="2dp"/>
-
-                        <TextView
-                            android:id="@+id/tvMessage"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Message"
-                            android:textColor="@android:color/black"
-                            android:textSize="20sp" />
-                    </RelativeLayout>
-
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginTop="8dp"
-                        android:src="@drawable/ic_message_black" />
-
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-
-        </com.google.android.material.card.MaterialCardView>  // post, verification, contact CARD
-
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <LinearLayout
-            android:id="@+id/mainLinearLayout"
+            android:id="@+id/layoutDetails"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/waveHeader"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical">
-
-
-            <LinearLayout
+            android:layout_height="fill_parent">
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
-                android:background="@color/cardBg"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true">
 
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginRight="10dp"
-                    app:srcCompat="@drawable/ic_company_icon"
-                    tools:ignore="RtlHardcoded" />
+                <com.google.android.material.appbar.AppBarLayout
+                    android:id="@+id/app_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="330dp"
+                    android:fitsSystemWindows="true"
+                    android:theme="@style/Theme.AppCompat.DayNight.Dialog">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="xyz garments Ltd."
-                    android:textSize="20dp" />
+                    <com.google.android.material.appbar.CollapsingToolbarLayout
+                        android:id="@+id/toolbar_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="330dp"
+                        app:collapsedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
+                        app:contentScrim="@color/colorPrimary"
+                        app:expandedTitleGravity="center_horizontal"
+                        app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
+                        app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                        app:toolbarId="@+id/toolbar"
+                        app:layout_collapseMode="pin">
 
-            </LinearLayout>  // garments name layout
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="330dp">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <com.scwang.wave.MultiWaveHeader
+                                    android:id="@+id/waveHeader"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="250dp"
+                                    app:mwhStartColor="@color/colorWaveStart"
+                                    app:mwhCloseColor="@color/colorWaveClose"
+                                    app:mwhWaves="MultiWave">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="20dp"
-                android:background="@color/cardBg"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                                </com.scwang.wave.MultiWaveHeader>
+                            </LinearLayout>  <!--wave layout-->
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="330dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginRight="10dp"
-                    app:srcCompat="@drawable/designation_icon" />
+                                    <de.hdodenhof.circleimageview.CircleImageView
+                                        android:id="@+id/profile_image"
+                                        android:layout_width="130dp"
+                                        android:layout_height="130dp"
+                                        android:layout_marginTop="20dp"
+                                        android:src="@drawable/person"
+                                        app:civ_border_color="#fff"
+                                        app:civ_border_width=".5dp"
+                                        />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="CEO xyz garments company ltd."
-                    android:textSize="20dp" />
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Estiak Ahmed"
+                                        android:textAlignment="center"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="20sp"
+                                        android:layout_marginBottom="30dp"/>
 
-            </LinearLayout>  // designation of user layout
+                                    <LinearLayout
+                                        style="@style/Widget.MaterialComponents.CardView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="70dp"
+                                        android:orientation="horizontal"
+                                        android:padding="5dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_marginLeft="30dp"
+                                        android:layout_marginRight="30dp"
+                                        android:background="@drawable/notification_background_round">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="20dp"
-                android:background="@color/cardBg"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                                        <LinearLayout
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+                                            <LinearLayout
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp">
+                                                <RelativeLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent">
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:gravity="center">
+                                                        <ImageView
+                                                            android:layout_width="40dp"
+                                                            android:layout_height="40dp"
+                                                            app:srcCompat="@drawable/post"/>
+                                                    </LinearLayout>
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:gravity="end">
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:text="9"
+                                                            android:layout_marginRight="7.5dp"
+                                                            android:textColor="@color/colorRed"
+                                                            android:textSize="15sp"
+                                                            />
+                                                    </LinearLayout>
+                                                </RelativeLayout>
+                                            </LinearLayout>
 
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginRight="10dp"
-                    app:srcCompat="@drawable/ic_phone_android_black_24dp" />
+                                        </LinearLayout>
+                                        <LinearLayout
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+                                            <LinearLayout
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp">
+                                                <RelativeLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent">
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:gravity="center">
+                                                        <ImageView
+                                                            android:layout_width="40dp"
+                                                            android:layout_height="40dp"
+                                                            app:srcCompat="@drawable/message"/>
+                                                    </LinearLayout>
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:gravity="end">
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:text="9"
+                                                            android:textColor="@color/colorRed"
+                                                            android:textSize="15sp"
+                                                            android:layout_marginRight="5.5dp"
+                                                            android:layout_marginTop="1dp"/>
+                                                    </LinearLayout>
+                                                </RelativeLayout>
+                                            </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="+88017233434344"
-                    android:textSize="20dp" />
+                                        </LinearLayout>
+                                        <LinearLayout
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+                                            <LinearLayout
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp">
+                                                <RelativeLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent">
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:gravity="center">
+                                                        <ImageView
+                                                            android:layout_width="40dp"
+                                                            android:layout_height="40dp"
+                                                            app:srcCompat="@drawable/notification"/>
+                                                    </LinearLayout>
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:gravity="end">
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:text="9"
+                                                            android:textColor="@color/colorRed"
+                                                            android:textSize="15sp"
+                                                            android:layout_marginRight="6.5dp"
+                                                            android:layout_marginTop="4.7dp"/>
+                                                    </LinearLayout>
+                                                </RelativeLayout>
+                                            </LinearLayout>
 
-            </LinearLayout>  // phone number layout
+                                        </LinearLayout>
+                                        <LinearLayout
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+                                            <ImageView
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp"
+                                                app:srcCompat="@drawable/verify"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="20dp"
-                android:background="@color/cardBg"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                                        </LinearLayout>
 
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginRight="10dp"
-                    app:srcCompat="@drawable/email_icon" />
+                                    </LinearLayout>
+                                </LinearLayout>  <!--img & name layout-->
+                            </RelativeLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="bipul@gmail.com"
-                    android:textSize="20dp" />
+                        </RelativeLayout>
+                        <androidx.appcompat.widget.Toolbar
+                            android:id="@+id/toolbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/actionBarSize"
+                            android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+                            app:contentInsetStart="72dp"
+                            app:layout_collapseMode="pin"
+                            app:popupTheme="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small"
+                            android:tooltipText="My Profile"/>
 
-            </LinearLayout>  // email layout
+                    </com.google.android.material.appbar.CollapsingToolbarLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="20dp"
-                android:background="@color/cardBg"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                </com.google.android.material.appbar.AppBarLayout>
+                <LinearLayout
+                    android:id="@+id/cardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_below="@+id/waveHeader"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="30dp"
+                    android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginRight="10dp"
-                    app:srcCompat="@drawable/nidd" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="09809898999898"
-                    android:textSize="20dp" />
-
-            </LinearLayout>  // id number layout
-
-            <LinearLayout
-                android:background="@color/cardBg"
-                android:layout_marginTop="30dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:layout_weight=".5"
-                    android:text="Trad License  :"/>
-
-
-                <com.google.android.material.button.MaterialButton
-                    android:layout_weight=".5"
-                    android:layout_width="60dp"
-                    android:gravity="center"
-                    android:layout_height="40dp"
-                    app:cornerRadius="20dp"
-                    android:textAllCaps="false"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:text="@string/uploaded"
-                    tools:ignore="UnusedAttribute" />
-
-            </LinearLayout>  // licence upload layout
-
-            <LinearLayout
-                android:background="@color/cardBg"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:layout_weight=".5"
-                    android:text="Payment         :"/>
-
-
-                <com.google.android.material.button.MaterialButton
-                    android:layout_weight=".5"
-                    android:layout_width="60dp"
-                    android:gravity="center"
-                    android:layout_height="40dp"
-                    app:cornerRadius="20dp"
-                    android:textAllCaps="false"
-                    android:backgroundTint="@color/greenColor"
-                    android:text="paid"/>
-
-
-
-            </LinearLayout>  // payment layout
-
-
-
-        </LinearLayout>  // profile info layout
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnLogin"
-            android:layout_below="@+id/mainLinearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="57dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="40dp"
-            android:gravity="center"
-            android:backgroundTint="@color/colorPrimary"
-            android:text="Update profile"
-            android:textAllCaps="false"
-            app:cornerRadius="25dp"
-            android:layout_marginBottom="40dp"/>  // update profile button
-
-
-    </LinearLayout>
-
-</ScrollView>
+                </LinearLayout>
+                <include
+                    layout="@layout/profile_details_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginTop="10dp"
+                    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+                    android:layout_marginBottom="60dp"/>
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -56,6 +56,8 @@
                 >
 
                 <LinearLayout
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
                     android:id="@+id/layoutHome"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -66,18 +68,17 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/ivHomeicon"
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
                         android:padding="0dp"
-                        app:srcCompat="@drawable/ic_home_black_24dp" />
+                        app:srcCompat="@drawable/ic_home_violet" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Home"
-                        android:fontFamily="@font/nexalight"
-                        android:textColor="#ffffff"
-
+                    <ImageView
+                        android:id="@+id/tvTextHome"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/home_text"
                         />
 
                 </LinearLayout>
@@ -144,6 +145,8 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
                     android:id="@+id/layoutProfile"
                     android:layout_weight="3"
                     android:layout_width="0dp"
@@ -153,17 +156,17 @@
                     android:gravity="center"
                     >
                     <ImageView
+                        android:id="@+id/ivProfileIcon"
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
                         android:padding="0dp"
                         app:srcCompat="@drawable/ic_person"/>
 
-                    <TextView
+                    <ImageView
+                        android:id="@+id/tvProfileText"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Profile"
-                        android:textColor="#ffffff"
-                        android:fontFamily="@font/nexalight"
+                        android:layout_height="17dp"
+                        app:srcCompat="@drawable/profile_text_white"
                         />
 
                 </LinearLayout>
