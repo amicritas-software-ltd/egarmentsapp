@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activitys.PostActivity"></activity>
+        <activity android:name=".activitys.UserUtilsActivity"></activity>
+        <activity android:name=".activitys.PostActivity" />
         <activity android:name=".activitys.VarifyActivity" />
         <activity android:name=".activitys.MessengerDialogsListActivity" />
         <activity android:name=".activitys.MessengerActivity" />
@@ -71,8 +72,8 @@
             android:name="com.facebook.accountkit.ClientToken"
             android:value="@string/ACCOUNT_KIT_CLIENT_TOKEN" />
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

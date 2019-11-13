@@ -90,7 +90,7 @@ public class MyPostFragment extends Fragment implements MyPostAdapter.PostAdapte
         imgBackArrow.setOnClickListener(v -> {
             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
             fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-            fragmentTransaction.replace(R.id.main_frame, new UserFragment());
+            fragmentTransaction.replace(R.id.main_frame, new MyProfileFragment());
             fragmentTransaction.commit();
         });
     }

@@ -2,7 +2,6 @@ package com.amicritas.e_graments.activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -12,16 +11,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
 import com.amicritas.e_graments.R;
 import com.amicritas.e_graments.fragments.MyProfileFragment;
-import com.amicritas.e_graments.fragments.UserFragment;
 import com.amicritas.e_graments.fragments.TimelineFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.database.core.Context;
 
 public class MainActivity extends AppCompatActivity {
     FloatingActionButton postFloatingActionButton;

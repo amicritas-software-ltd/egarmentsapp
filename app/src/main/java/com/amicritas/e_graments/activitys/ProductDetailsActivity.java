@@ -35,7 +35,6 @@ public class ProductDetailsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ProductDetailsActivity.this, MessengerActivity.class);
                 startActivity(intent);
-                //Toast.makeText(ProductDetailsActivity.this, "clicked", Toast.LENGTH_SHORT).show();
             }
         });
 

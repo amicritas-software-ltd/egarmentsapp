@@ -10,35 +10,35 @@
             android:scaleX="0.100000"
             android:scaleY="-0.100000">
         <path
-            android:fillColor="#000000"
+            android:fillColor="#BF000000"
             android:strokeWidth="1"
             android:pathData="M748 2706 c-62 -29 -104 -69 -134 -128 l-24 -47 0 -1081 0 -1081 24 -47 c30 -59 66 -93 132 -126 l52 -26 638 0 639 0 50 24 c61 29 117 86 144 146 20 44 21 62 21 881 0 797 -1 837 -18 852 -22 20 -53 22 -70 5 -9 -9 -12 -209 -12 -837 0 -782 -1 -828 -19 -867 -22 -47 -59 -80 -110 -95 -24 -7 -239 -9 -646 -7 -589 3 -611 4 -644 23 -19 11 -43 33 -55 48 l-21 28 -3 1067 c-2 1191 -7 1110 67 1159 l34 23 642 0 642 0 34 -23 c53 -35 80 -98 77 -177 l-3 -65 -654 -3 c-463 -1 -658 -5 -668 -13 -19 -16 -16 -53 5 -72 17 -16 80 -17 704 -17 651 0 686 1 701 18 14 15 17 40 17 133 0 99 -3 121 -24 164 -29 61 -86 117 -146 144 -44 20 -63 21 -685 20 l-640 0 -47 -23z" />
         <path
-            android:fillColor="#000000"
+            android:fillColor="#CB000000"
             android:strokeWidth="1"
             android:pathData="M850 1800 l0 -250 273 2 272 3 3 248 2 247 -275 0 -275 0 0 -250z" />
         <path
-            android:fillColor="#000000"
+            android:fillColor="#BF000000"
             android:strokeWidth="1"
             android:pathData="M1500 1925 l0 -45 275 0 275 0 0 45 0 45 -275 0 -275 0 0 -45z" />
         <path
-            android:fillColor="#000000"
+            android:fillColor="#BF000000"
             android:strokeWidth="1"
             android:pathData="M1507 1723 c-14 -13 -7 -81 8 -87 9 -3 133 -6 275 -5 l260 0 0 50 0 49 -268 0 c-148 0 -272 -3 -275 -7z" />
         <path
-            android:fillColor="#000000"
+            android:fillColor="#BF000000"
             android:strokeWidth="1"
             android:pathData="M850 1070 l0 -250 275 0 275 0 -2 248 -3 247 -272 3 -273 2 0 -250z" />
         <path
-            android:fillColor="#000000"
+            android:fillColor="#BF000000"
             android:strokeWidth="1"
             android:pathData="M1511 1231 c-7 -5 -11 -23 -9 -47 l3 -39 273 -2 272 -2 0 48 0 49 -263 0 c-144 1 -268 -3 -276 -7z" />
         <path
-            android:fillColor="#000000"
+            android:fillColor="#BF000000"
             android:strokeWidth="1"
             android:pathData="M1613 992 l-113 -3 0 -44 0 -44 123 -3 c67 -2 191 -2 275 0 l152 3 0 46 0 46 -160 -5 c-87 -3 -161 -3 -162 1 -2 3 -54 5 -115 3z" />
         <path
-            android:fillColor="#000000"
+            android:fillColor="#BF000000"
             android:strokeWidth="1"
             android:pathData="M867 632 c-22 -24 -21 -55 1 -75 17 -15 71 -17 569 -17 520 0 551 1 566 18 23 25 22 69 -2 82 -13 6 -209 10 -569 10 -519 0 -550 -1 -565 -18z" />
     </group>
