@@ -7,60 +7,7 @@
     tools:context=".fragments.TimelineFragment"
     android:orientation="vertical"
     tools:ignore="ExtraText">
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#2B6885"
-        app:cardCornerRadius="10dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="E-garments"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="end"
-            android:orientation="horizontal">
-            <LinearLayout
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginRight="18dp">
-                <ImageView
-                    android:id="@+id/ivMessage"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    app:srcCompat="@drawable/message_white"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginRight="10dp">
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    app:srcCompat="@drawable/notification_white"
-                    />
-            </LinearLayout>
-            <TextView
-                android:id="@+id/tvMainMenu"
-                android:layout_width="25dp"
-                android:gravity="center"
-                android:layout_height="25dp"
-                android:text="@string/_8942"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:textColor="@color/white"/>
-
-        </LinearLayout>
-
-    </androidx.appcompat.widget.Toolbar>  <!--custom toolbar layout-->
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"

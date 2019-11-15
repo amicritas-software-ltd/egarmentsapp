@@ -102,7 +102,7 @@ public class LoginActivity extends AppCompatActivity {
                 AccountKit.getCurrentAccount(new AccountKitCallback<Account>() {
                     @Override
                     public void onSuccess(Account account) {
-                        startActivity(new Intent(LoginActivity.this, PreSignUp.class));
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     }
 
                     @Override

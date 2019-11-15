@@ -42,8 +42,6 @@ public class MyProfileFragment extends Fragment {
     Dialog myDialog;
 
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -98,10 +96,12 @@ public class MyProfileFragment extends Fragment {
 
             myPostLayout.setOnClickListener(v12 -> {
                 Intent intent = new Intent(getActivity(), UserUtilsActivity.class);
+                myDialog.dismiss();
                 startActivity(intent);
             });
             myOrderLayout.setOnClickListener(v13 -> {
                 Intent intent = new Intent(getActivity(), UserUtilsActivity.class);
+                myDialog.dismiss();
                 startActivity(intent);
             });
             Objects.requireNonNull(myDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));

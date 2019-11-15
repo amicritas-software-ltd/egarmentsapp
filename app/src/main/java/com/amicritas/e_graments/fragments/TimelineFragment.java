@@ -76,7 +76,7 @@ public class TimelineFragment extends Fragment implements PostAdapter.PostAdapte
         locationFilterBtn = view.findViewById(R.id.btnLocationFilter);
         searchAc = view.findViewById(R.id.acSearch);
         mainMenuTv = view.findViewById(R.id.tvMainMenu);
-        messageIv = view.findViewById(R.id.ivMessage);
+       // messageIv = view.findViewById(R.id.ivMessage);
         layoutCloseSearch = view.findViewById(R.id.layoutCloseSearch);
 
 
@@ -85,8 +85,8 @@ public class TimelineFragment extends Fragment implements PostAdapter.PostAdapte
         setCategoryFilter();
         setDateFilter();
         setSearchView();
-        setPopupMeny();
-        setMessage();
+        //setPopupMeny();
+        //setMessage();
 
         setLocationFilterView();
         if (searchAc.getText().toString().trim().isEmpty()){
@@ -127,7 +127,7 @@ public class TimelineFragment extends Fragment implements PostAdapter.PostAdapte
 
     }
 
-    private void setMessage() {
+    /*private void setMessage() {
         messageIv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,9 +135,9 @@ public class TimelineFragment extends Fragment implements PostAdapter.PostAdapte
                 startActivity(intent);
             }
         });
-    }
+    }*/
 
-    private void setPopupMeny() {
+    /*private void setPopupMeny() {
         mainMenuTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -163,7 +163,7 @@ public class TimelineFragment extends Fragment implements PostAdapter.PostAdapte
                 popupMenu.show();
             }
         });
-    }
+    }*/
 
     private void setLocationFilterView() {
         locationFilterBtn.setOnClickListener(new View.OnClickListener() {

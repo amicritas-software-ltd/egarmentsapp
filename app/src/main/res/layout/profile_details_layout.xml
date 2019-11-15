@@ -186,7 +186,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nexalight"
-                        android:text="Payment and payout"
+                        android:text="Payment"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:layout_marginTop="20dp"
@@ -232,7 +232,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nexalight"
-                        android:text="Trade license and nid"
+                        android:text="Trade license and Nid"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:layout_marginTop="20dp"
@@ -259,13 +259,14 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SUPPORT"
+                android:text="Sating"
                 android:layout_marginLeft="25dp"
                 android:fontFamily="@font/nexalight"
                 android:textSize="13sp"
@@ -274,70 +275,7 @@
         <LinearLayout
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
-            android:id="@+id/mySafetyCenterLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="5">
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="4"
-                        android:layout_height="wrap_content">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/nexalight"
-                            android:text="Safety center"
-                            android:textColor="@color/black"
-                            android:textSize="18sp"
-                            android:layout_marginTop="15dp"
-                            android:layout_marginBottom="5dp"
-                            android:layout_marginLeft="25dp"/>
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="match_parent"
-                        android:gravity="end|center">
-                        <ImageView
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_marginRight="25dp"
-                            app:srcCompat="@drawable/ic_data_security" />
-                    </LinearLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginRight="80dp"
-                        android:fontFamily="@font/nexalight"
-                        android:layout_marginBottom="15dp"
-                        android:text="Find product to get help with security, safety or other urgent matters."/>
-                </LinearLayout>
-            </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grayDeep"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:id="@+id/myGetHelpLayout"
+            android:id="@+id/myProfileSatingLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -353,53 +291,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nexalight"
-                        android:text="Get help"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="20dp"
-                        android:layout_marginLeft="25dp"/>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:gravity="end|center">
-                    <ImageView
-                        android:layout_width="23dp"
-                        android:layout_height="23dp"
-                        android:layout_marginRight="25dp"
-                        app:srcCompat="@drawable/ic_help" />
-                </LinearLayout>
-            </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grayDeep"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:id="@+id/myFeedbackLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="5">
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="4"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/nexalight"
-                        android:text="Give us feedback"
+                        android:text="Profile sating"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:layout_marginTop="20dp"
@@ -416,7 +308,7 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginRight="25dp"
-                        app:srcCompat="@drawable/ic_feedback" />
+                        app:srcCompat="@drawable/ic_sating" />
                 </LinearLayout>
             </LinearLayout>
             <View
@@ -426,64 +318,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp" />
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="LEGAL"
-                android:layout_marginLeft="25dp"
-                android:fontFamily="@font/nexalight"
-                android:textSize="13sp"
-                android:layout_marginTop="10dp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:id="@+id/myTermsAndServiceLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="5">
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="4"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/nexalight"
-                        android:text="Terms and service"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="20dp"
-                        android:layout_marginLeft="25dp"/>
 
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:gravity="end|center">
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginRight="25dp"
-                        app:srcCompat="@drawable/ic_terms_service" />
-                </LinearLayout>
-            </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grayDeep"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp" />
-        </LinearLayout>
         <LinearLayout
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"

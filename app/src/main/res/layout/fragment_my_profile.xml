@@ -257,7 +257,7 @@
                     android:layout_height="fill_parent"
                     android:layout_marginTop="10dp"
                     app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-                    android:layout_marginBottom="60dp"/>
+                    android:layout_marginBottom="40dp"/>
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
         </LinearLayout>
     </RelativeLayout>
