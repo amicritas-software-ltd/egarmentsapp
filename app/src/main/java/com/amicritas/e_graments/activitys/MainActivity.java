@@ -27,13 +27,17 @@ import com.amicritas.e_graments.fragments.TimelineFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity{
+import java.util.Objects;
+
+public class MainActivity extends AppCompatActivity {
     FloatingActionButton postFloatingActionButton;
     ImageView backArrowImg, ivHomeicon, ivProfileIcon, tvTextHome, tvProfileText, ivIconFavorite, ivTextFavorite;
-    LinearLayout layoutProfile, layoutHome, layoutSave, dehazeLayout;
+    LinearLayout layoutProfile, layoutHome, layoutSave, dehazeLayout, layoutTopProfile,viewProfileLinerLayout, myGetHelpLayout;
     Fragment selectedFragment = null;
     Toolbar toolbar;
     DrawerLayout drawerLayout;
+    TextView tvUserNameNav;
+    View headerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,10 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
 
         NavigationView navigationView = findViewById(R.id.navigationView);
+        headerView = navigationView.getHeaderView(0);
+
+        layoutTopProfile = findViewById(R.id.layoutTopProfile);
+        tvUserNameNav = findViewById(R.id.tvUserNameNav);
 
         ivProfileIcon = findViewById(R.id.ivProfileIcon);
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -55,6 +63,7 @@ public class MainActivity extends AppCompatActivity{
         ivIconFavorite = findViewById(R.id.ivIconFavorite);
         toolbar = findViewById(R.id.toolbar);
         dehazeLayout = findViewById(R.id.dehazeLayout);
+        layoutHome.setBackgroundResource(R.drawable.nav_button_background);
 
         setSupportActionBar(toolbar);
 
@@ -63,6 +72,7 @@ public class MainActivity extends AppCompatActivity{
         setHome();
         setSavePost();
         setDehaze();
+        setTopProfile();
 
         postFloatingActionButton = findViewById(R.id.floatingActionButtonAddPost);
 
@@ -72,7 +82,44 @@ public class MainActivity extends AppCompatActivity{
         }
 
         onfloatingActionButton();
+        setClick();
+        setGetHelp();
 
+
+        //tvUserNameNav.setText("sou");
+    }
+
+    private void setGetHelp() {
+
+        myGetHelpLayout = headerView.findViewById(R.id.myGetHelpLayout);
+        myGetHelpLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "helloo", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void setClick() {
+
+        viewProfileLinerLayout = headerView.findViewById(R.id.viewProfileLinerLayout);
+        viewProfileLinerLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "hello", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+    }
+
+    private void setTopProfile() {
+        layoutTopProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void setDehaze() {
@@ -90,13 +137,17 @@ public class MainActivity extends AppCompatActivity{
             @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
+                //Objects.requireNonNull(getSupportActionBar()).show();
                 tvProfileText.setImageResource(R.drawable.profile_text_white);
                 selectedFragment = new TimelineFragment();
-                ivProfileIcon.setImageResource(R.drawable.ic_person);
-                ivHomeicon.setImageResource(R.drawable.ic_home_black_24dp);
-                tvTextHome.setImageResource(R.drawable.home_text_white);
+                ivProfileIcon.setImageResource(R.drawable.ic_person_white);
+                ivHomeicon.setImageResource(R.drawable.ic_home_white);
+                tvTextHome.setImageResource(R.drawable.home_nav_text_white);
                 ivIconFavorite.setImageResource(R.drawable.ic_heart_outline_violet);
                 ivTextFavorite.setImageResource(R.drawable.favorite_text_violet);
+                layoutHome.setBackgroundResource(R.drawable.null_background);
+                layoutSave.setBackgroundResource(R.drawable.nav_button_background);
+                layoutProfile.setBackgroundResource(R.drawable.null_background);
                 getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
                         selectedFragment).commit();
             }
@@ -108,13 +159,17 @@ public class MainActivity extends AppCompatActivity{
             @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
+                //Objects.requireNonNull(getSupportActionBar()).show();
                 tvProfileText.setImageResource(R.drawable.profile_text_white);
                 selectedFragment = new TimelineFragment();
-                ivProfileIcon.setImageResource(R.drawable.ic_person);
+                ivProfileIcon.setImageResource(R.drawable.ic_person_white);
                 ivHomeicon.setImageResource(R.drawable.ic_home_violet);
-                tvTextHome.setImageResource(R.drawable.home_text_violet);
+                tvTextHome.setImageResource(R.drawable.home_nav_text_violet);
                 ivIconFavorite.setImageResource(R.drawable.ic_heart_outline);
                 ivTextFavorite.setImageResource(R.drawable.favorite_text_white);
+                layoutHome.setBackgroundResource(R.drawable.nav_button_background);
+                layoutSave.setBackgroundResource(R.drawable.null_background);
+                layoutProfile.setBackgroundResource(R.drawable.null_background);
                 getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
                         selectedFragment).commit();
             }
@@ -127,15 +182,19 @@ public class MainActivity extends AppCompatActivity{
             @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
-                tvTextHome.setImageResource(R.drawable.home_text_white);
+                tvTextHome.setImageResource(R.drawable.home_nav_text_white);
                 tvProfileText.setImageResource(R.drawable.profile_text_violet);
                 ivProfileIcon.setImageResource(R.drawable.ic_person_violet);
-                ivHomeicon.setImageResource(R.drawable.ic_home_black_24dp);
+                ivHomeicon.setImageResource(R.drawable.ic_home_white);
                 ivIconFavorite.setImageResource(R.drawable.ic_heart_outline);
                 ivTextFavorite.setImageResource(R.drawable.favorite_text_white);
+                layoutProfile.setBackgroundResource(R.drawable.nav_button_background);
+                layoutHome.setBackgroundResource(R.drawable.null_background);
+                layoutSave.setBackgroundResource(R.drawable.null_background);
                 selectedFragment = new MyProfileFragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
                         selectedFragment).commit();
+                //Objects.requireNonNull(getSupportActionBar()).hide();
             }
         });
     }
@@ -192,5 +251,10 @@ public class MainActivity extends AppCompatActivity{
     public void onBackArrow(){
         //backArrowImg.setOnClickListener(view -> onBackPressed());
     }
+
+    /*LinearLayout viewProfileLinerLayout = findViewById(R.id.viewProfileLinerLayout);
+    viewProfileLinerLayout.*/
+
+
 
 }

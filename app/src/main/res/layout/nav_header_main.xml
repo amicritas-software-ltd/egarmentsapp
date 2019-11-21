@@ -1,496 +1,684 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp">
+        android:layout_height="120dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true">
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="50dp"
             android:src="@drawable/person"
-            app:civ_border_color="#fff"
-            app:civ_border_width=".5dp"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="1dp" />
+        <LinearLayout
+            android:id="@+id/viewProfileLinerLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            />
+            android:layout_marginTop="60dp"
+            android:orientation="vertical"
+            android:background="@drawable/custom_ripple">
+
+            <TextView
+                android:id="@+id/tvUserNameNav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nexalight"
+                android:text="Estiak Ahmed"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="13dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nexalight"
+                    android:text="View profile"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="11sp" />
+                <ImageView
+                    android:layout_width="11dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="2dp"
+                    app:srcCompat="@drawable/ic_keyboard_arrow_down" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grayDeep2" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Estiak Ahmed"
-            android:textStyle="bold"
-            android:layout_marginTop="70dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/nexalight"
-            android:textColor="@color/black"
-            android:layout_marginLeft="20dp"/>
+            android:text="SUPPORT"
+            android:textColor="@color/colourGrayText"
+            android:textSize="11sp" />
     </LinearLayout>
 
 
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="SUPPORT"
-                android:textColor="@color/gray"
-                android:layout_marginLeft="25dp"
-                android:fontFamily="@font/nexalight"
-                android:textSize="13sp"
-                android:layout_marginTop="10dp"/>
-        </LinearLayout>
+        android:id="@+id/mySafetyCenterLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_ripple"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:orientation="vertical">
+
         <LinearLayout
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:id="@+id/mySafetyCenterLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="5">
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="4"
-                        android:layout_height="wrap_content">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/nexalight"
-                            android:text="Safety center"
-                            android:textColor="@color/black"
-                            android:textSize="18sp"
-                            android:layout_marginTop="15dp"
-                            android:layout_marginBottom="5dp"
-                            android:layout_marginLeft="25dp"/>
+                android:weightSum="5">
 
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="match_parent"
-                        android:gravity="end|center">
-                        <ImageView
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_marginRight="10dp"
-                            app:srcCompat="@drawable/ic_data_security" />
-                    </LinearLayout>
-                </LinearLayout>
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="25dp"
-                        android:layout_marginRight="5dp"
-                        android:textColor="@color/gray"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="5dp"
                         android:fontFamily="@font/nexalight"
-                        android:layout_marginBottom="10dp"
-                        android:text="Find product to get help with security, safety or other urgent matters."/>
-                </LinearLayout>
-            </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grayDeep" />
-        </LinearLayout>
-        <LinearLayout
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:id="@+id/myGetHelpLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="5">
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="4"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/nexalight"
-                        android:text="Get help"
+                        android:text="Safety center"
                         android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="25dp"/>
+                        android:textFontWeight="600"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
 
                 </LinearLayout>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:gravity="end|center">
-                    <ImageView
-                        android:layout_width="23dp"
-                        android:layout_height="23dp"
-                        android:layout_marginRight="10dp"
-                        app:srcCompat="@drawable/ic_help" />
-                </LinearLayout>
-            </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grayDeep"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:id="@+id/myFeedbackLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="5">
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="4"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/nexalight"
-                        android:text="Give us feedback"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="25dp"/>
 
-                </LinearLayout>
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:gravity="end|center">
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginRight="10dp"
-                        app:srcCompat="@drawable/ic_feedback" />
-                </LinearLayout>
-            </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grayDeep"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="LEGAL"
-                android:textColor="@color/gray"
-                android:layout_marginLeft="25dp"
-                android:fontFamily="@font/nexalight"
-                android:textSize="13sp"
-                android:layout_marginTop="10dp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:id="@+id/myAboutLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="5">
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="4"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/nexalight"
-                        android:text="About"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="25dp"/>
 
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:gravity="end|center">
                     <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_marginRight="10dp"
-                        app:srcCompat="@drawable/ic_terms_service" />
+                        app:srcCompat="@drawable/ic_shield_rgb" />
                 </LinearLayout>
             </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grayDeep"
-                 />
-        </LinearLayout>
-    <LinearLayout
-        android:foreground="?android:attr/selectableItemBackground"
-        android:clickable="true"
-        android:id="@+id/myContactLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="5">
+
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="4"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/nexalight"
-                    android:text="Contact"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="5dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="25dp"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:gravity="end|center">
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginRight="10dp"
-                    app:srcCompat="@drawable/ic_terms_service" />
+                    android:fontFamily="@font/nexalight"
+                    android:text="Find product to get help with security, safety or other urgent matters."
+                    android:textColor="@color/colourGrayText"
+                    android:textSize="14sp" />
             </LinearLayout>
         </LinearLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/grayDeep"
-            />
+            android:background="@color/grayDeep2" />
     </LinearLayout>
+
     <LinearLayout
-        android:foreground="?android:attr/selectableItemBackground"
-        android:clickable="true"
-        android:id="@+id/myTermsAndServiceLayout"
+        android:id="@+id/myGetHelpLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/custom_ripple"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:weightSum="5">
+
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_weight="4"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_weight="4">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
                     android:fontFamily="@font/nexalight"
-                    android:text="Terms and service"
+                    android:text="Get help"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="25dp"/>
+                    android:textFontWeight="600"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="end|center">
+
                 <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
                     android:layout_marginRight="10dp"
-                    app:srcCompat="@drawable/ic_terms_service" />
+                    app:srcCompat="@drawable/question" />
             </LinearLayout>
         </LinearLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/grayDeep"
-            />
+            android:background="@color/grayDeep2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/myFeedbackLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_ripple"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:orientation="vertical"
+        tools:ignore="UnusedAttribute">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="5">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:fontFamily="@font/nexalight"
+                    android:text="Give us feedback"
+                    android:textColor="@color/black"
+                    android:textFontWeight="600"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="end|center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="10dp"
+                    app:srcCompat="@drawable/ic_feedback_rgb" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grayDeep2" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="MISCELLANEOUS"
-            android:textColor="@color/gray"
             android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/nexalight"
-            android:textSize="13sp"
-            android:layout_marginTop="10dp"/>
+            android:text="LEGAL"
+            android:textColor="@color/colourGrayText"
+            android:textSize="11sp" />
     </LinearLayout>
+
     <LinearLayout
-        android:foreground="?android:attr/selectableItemBackground"
+        android:id="@+id/myPrivacyPolicyLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_ripple"
         android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="5">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:fontFamily="@font/nexalight"
+                    android:text="Privacy policy"
+                    android:textColor="@color/black"
+                    android:textFontWeight="600"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="end|center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="10dp"
+                    app:srcCompat="@drawable/ic_privecy_policy_rgb" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grayDeep2" />
+    </LinearLayout><LinearLayout
+        android:id="@+id/myTermsAndServiceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_ripple"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="5">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:fontFamily="@font/nexalight"
+                    android:text="Terms and service"
+                    android:textColor="@color/black"
+                    android:textFontWeight="600"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="end|center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="10dp"
+                    app:srcCompat="@drawable/ic_terms_service_rgb" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grayDeep2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/myComplainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_ripple"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="5">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:fontFamily="@font/nexalight"
+                    android:text="Complain"
+                    android:textColor="@color/black"
+                    android:textFontWeight="600"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="end|center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="10dp"
+                    app:srcCompat="@drawable/ic_contact_rgb" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grayDeep2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/myAboutLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_ripple"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="5">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:fontFamily="@font/nexalight"
+                    android:text="About"
+                    android:textColor="@color/black"
+                    android:textFontWeight="600"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="end|center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="10dp"
+                    app:srcCompat="@drawable/ic_about_rgb" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grayDeep2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/nexalight"
+
+            android:text="MISCELLANEOUS"
+            android:textColor="@color/colourGrayText"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
         android:id="@+id/myBlogayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/custom_ripple"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:weightSum="5">
+
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_weight="4"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_weight="4">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
                     android:fontFamily="@font/nexalight"
                     android:text="Blog"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="25dp"/>
+                    android:textFontWeight="600"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="end|center">
+
                 <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_marginRight="10dp"
-                    app:srcCompat="@drawable/ic_terms_service" />
+                    app:srcCompat="@drawable/ic_blog_rgb" />
             </LinearLayout>
         </LinearLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/grayDeep"
-            />
+            android:background="@color/grayDeep2" />
     </LinearLayout>
+
     <LinearLayout
-        android:foreground="?android:attr/selectableItemBackground"
-        android:clickable="true"
         android:id="@+id/myEgarmentsLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/custom_ripple"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:weightSum="5">
+
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_weight="4"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_weight="4">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
                     android:fontFamily="@font/nexalight"
                     android:text="E-garments"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="25dp"/>
+                    android:textFontWeight="600"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="end|center">
+
                 <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_marginRight="10dp"
-                    app:srcCompat="@drawable/ic_terms_service" />
+                    app:srcCompat="@drawable/e" />
             </LinearLayout>
         </LinearLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/grayDeep"
-            />
+            android:background="@color/grayDeep2" />
     </LinearLayout>
+
     <LinearLayout
-        android:foreground="?android:attr/selectableItemBackground"
-        android:clickable="true"
         android:id="@+id/myLoguotLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/custom_ripple"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:weightSum="5">
+
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_weight="4"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_weight="4">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
                     android:fontFamily="@font/nexalight"
                     android:text="Logout"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="25dp"/>
+                    android:textColor="@color/colorPrimary"
+                    android:textFontWeight="600"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="end|center">
+
                 <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_marginRight="10dp"
-                    app:srcCompat="@drawable/ic_logout" />
+                    app:srcCompat="@drawable/exit" />
             </LinearLayout>
         </LinearLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/grayDeep"
-            />
+            android:background="@color/grayDeep2" />
     </LinearLayout>
 
 </LinearLayout>
