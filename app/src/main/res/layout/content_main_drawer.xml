@@ -44,146 +44,172 @@
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bar"
-            style="@style/Widget.MaterialComponents.BottomAppBar"
-            android:layout_width="match_parent"
+            style="@style/Widget.MaterialComponents.BottomAppBar"            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="bottom"
-            app:backgroundTint="@color/colorPrimary"
+
             app:fabAlignmentMode="center"
+            android:backgroundTint="@color/colorPrimary"
             app:fabCradleMargin="5dp"
             app:fabCradleRoundedCornerRadius="10dp"
-            app:fabCradleVerticalOffset="5dp"
-            app:hideOnScroll="true" >
+            app:hideOnScroll="true"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:weightSum="15"
-                android:layout_marginRight="10dp"
-                >
+                android:weightSum="5"
+                android:layout_marginRight="17dp">
 
 
                 <LinearLayout
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:id="@+id/layoutHome"
-                    android:layout_weight="3"
+                    android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:background="@drawable/ripple_rffect">
-                    <ImageView
-                        android:id="@+id/ivHomeicon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="18dp"
-                        android:padding="0dp"
-                        app:srcCompat="@drawable/ic_home_violet"/>
+                    <LinearLayout
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:id="@+id/layoutHome"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageView
+                            android:id="@+id/ivHomeicon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="18dp"
+                            android:padding="0dp"
+                            app:srcCompat="@drawable/ic_home_violet"/>
 
-                    <ImageView
-                        android:id="@+id/tvTextHome"
-                        android:layout_width="match_parent"
-                        android:layout_height="10dp"
-                        android:layout_marginTop="3dp"
-                        app:srcCompat="@drawable/home_nav_text_violet"
-                        />
+                        <ImageView
+                            android:id="@+id/tvTextHome"
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            android:layout_marginTop="3dp"
+                            app:srcCompat="@drawable/home_nav_text_white"
+                            />
+                    </LinearLayout>
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:id="@+id/layoutSave"
-                    android:layout_weight="3"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    >
+                    <LinearLayout
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:id="@+id/layoutSave"
+                        android:background="@drawable/ripple_rffect"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageView
+                            android:id="@+id/ivIconFavorite"
+                            android:layout_width="wrap_content"
+                            android:layout_height="18dp"
+                            android:padding="0dp"
+                            app:srcCompat="@drawable/ic_heart_outline"/>
+
+                        <ImageView
+                            android:id="@+id/ivTextFavorite"
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            app:srcCompat="@drawable/favorite_text_white"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_gravity="center"
                     android:gravity="center"
                     >
-                    <ImageView
-                        android:id="@+id/ivIconFavorite"
-                        android:layout_width="wrap_content"
-                        android:layout_height="18dp"
-                        android:padding="0dp"
-                        app:srcCompat="@drawable/ic_heart_outline"/>
-
-                    <ImageView
-                        android:id="@+id/ivTextFavorite"
-                        android:layout_width="match_parent"
-                        android:layout_height="10dp"
-                        app:srcCompat="@drawable/favorite_text_white"
-                        />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_weight="3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    >
 
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/layoutTopProfile"
-                    android:layout_weight="3"
+                    android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:layout_gravity="center"
                     android:gravity="center">
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="20dp">
-                        <ImageView
-                            android:id="@+id/ivIconTopProfile"
-                            android:layout_width="wrap_content"
-                            android:layout_height="15dp"
-                            android:padding="0dp"
-                            app:srcCompat="@drawable/top_profile"/>
-                    </LinearLayout>
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:id="@+id/layoutTopProfile"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp">
+                            <ImageView
+                                android:id="@+id/ivIconTopProfile"
+                                android:layout_width="wrap_content"
+                                android:layout_height="15dp"
+                                android:padding="0dp"
+                                app:srcCompat="@drawable/top_profile"/>
+                        </LinearLayout>
 
-                    <ImageView
-                        android:id="@+id/ivTextTopProfile"
-                        android:layout_width="match_parent"
-                        android:layout_height="10dp"
-                        app:srcCompat="@drawable/top_profile_text_white"
-                        />
+                        <ImageView
+                            android:id="@+id/ivTextTopProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            app:srcCompat="@drawable/top_profile_text_white"
+                            />
+                    </LinearLayout>
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:id="@+id/layoutProfile"
-                    android:layout_weight="3"
+                    android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:layout_gravity="center"
                     android:gravity="center"
                     >
-                    <ImageView
-                        android:id="@+id/ivProfileIcon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="15dp"
-                        android:padding="0dp"
-                        app:srcCompat="@drawable/user"/>
+                    <LinearLayout
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:id="@+id/layoutProfile"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageView
+                            android:id="@+id/ivProfileIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:padding="0dp"
+                            app:srcCompat="@drawable/user"/>
 
-                    <ImageView
-                        android:id="@+id/tvProfileText"
-                        android:layout_width="match_parent"
-                        android:layout_height="10dp"
-                        android:layout_marginTop="5dp"
-                        app:srcCompat="@drawable/profille_nav_text_white"
-                        />
+                        <ImageView
+                            android:id="@+id/tvProfileText"
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            android:layout_marginTop="5dp"
+                            app:srcCompat="@drawable/profille_nav_text_white"
+                            />
+                    </LinearLayout>
 
                 </LinearLayout>
 

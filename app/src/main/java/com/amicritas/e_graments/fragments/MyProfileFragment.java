@@ -35,7 +35,7 @@ import java.util.Objects;
 public class MyProfileFragment extends Fragment {
     //private final FragmentActivity activity;
     ImageView imgBackArrow;
-    Toolbar toolbar;
+    //Toolbar toolbar;
     CollapsingToolbarLayout mCollapsingToolbarLayout;
     AppBarLayout appBarLayout;
     LinearLayout myPostLayout, myOrderLayout, myPaymentLayout;
@@ -54,7 +54,7 @@ public class MyProfileFragment extends Fragment {
         appBarLayout = view.findViewById(R.id.app_bar);
         mCollapsingToolbarLayout = view.findViewById(R.id.toolbar_layout);
         mCollapsingToolbarLayout.setTitleEnabled(false);
-        toolbar = view.findViewById(R.id.toolbar);
+        //toolbar = view.findViewById(R.id.toolbar);
         //toolbar.setTitle("My Profile");
 
         myDialog = new Dialog(Objects.requireNonNull(getActivity()));
@@ -66,13 +66,13 @@ public class MyProfileFragment extends Fragment {
         setOrder();
         setPayment();
 
-        appBarLayout.addOnOffsetChangedListener((AppBarLayout.BaseOnOffsetChangedListener) (appBarLayout, i) -> {
+        /*appBarLayout.addOnOffsetChangedListener((AppBarLayout.BaseOnOffsetChangedListener) (appBarLayout, i) -> {
             if (i <= -380){
                 toolbar.setTitle("My Profile");
             }else {
                 toolbar.setTitle("");
             }
-        });
+        });*/
 
         return view;
     }

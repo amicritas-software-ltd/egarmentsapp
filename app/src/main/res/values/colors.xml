@@ -22,7 +22,7 @@
     <color name="colorTransparent">#00FFFFFF</color>
     <color name="colorViolet">#590D83</color>
     <color name="colourGrayTransparent">#79000000</color>
-    <color name="colourGrayTransparent2">#20000000</color>
+    <color name="colourGrayTransparent2">#17000000</color>
     <color name="colourBlack">#000000</color>
     <color name="colourGrayText">#808080</color>
 </resources>

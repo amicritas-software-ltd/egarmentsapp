@@ -9,6 +9,7 @@
     android:minHeight="?attr/actionBarSize">
 
     <TextView
+        android:id="@+id/tvAppBarTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="E-garments"
@@ -22,6 +23,7 @@
         android:gravity="end"
         android:orientation="horizontal">
         <LinearLayout
+            android:id="@+id/messageLayout"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginRight="18dp">
@@ -33,6 +35,7 @@
                 />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/notificationLayout"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginRight="18dp">

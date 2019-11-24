@@ -30,7 +30,7 @@ import java.util.List;
 public class MyPostFragment extends Fragment implements MyPostAdapter.PostAdapterEvent{
     RecyclerView postRv;
     private List<PostDemo> postDemoList;
-    ImageView imgBackArrow;
+    //ImageView imgBackArrow;
 
 
     public MyPostFragment() {
@@ -44,9 +44,9 @@ public class MyPostFragment extends Fragment implements MyPostAdapter.PostAdapte
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_my_post, container, false);
 
-        imgBackArrow = view.findViewById(R.id.imgBackArrow);
+        //imgBackArrow = view.findViewById(R.id.imgBackArrow);
 
-        setBackPress();
+        //setBackPress();
 
         postDemoList = new ArrayList<>();
 
@@ -86,14 +86,14 @@ public class MyPostFragment extends Fragment implements MyPostAdapter.PostAdapte
         return view;
     }
 
-    private void setBackPress() {
+    /*private void setBackPress() {
         imgBackArrow.setOnClickListener(v -> {
             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
             fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             fragmentTransaction.replace(R.id.main_frame, new MyProfileFragment());
             fragmentTransaction.commit();
         });
-    }
+    }*/
 
     @Override
     public void onProductClicked(PostDemo postDemo) {

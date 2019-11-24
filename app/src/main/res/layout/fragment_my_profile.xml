@@ -142,32 +142,10 @@
                                             <LinearLayout
                                                 android:layout_width="40dp"
                                                 android:layout_height="40dp">
-                                                <RelativeLayout
+                                                <ImageView
                                                     android:layout_width="match_parent"
-                                                    android:layout_height="match_parent">
-                                                    <LinearLayout
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="match_parent"
-                                                        android:gravity="center">
-                                                        <ImageView
-                                                            android:layout_width="40dp"
-                                                            android:layout_height="40dp"
-                                                            app:srcCompat="@drawable/message"/>
-                                                    </LinearLayout>
-                                                    <LinearLayout
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="match_parent"
-                                                        android:gravity="end">
-                                                        <TextView
-                                                            android:layout_width="wrap_content"
-                                                            android:layout_height="wrap_content"
-                                                            android:text="9"
-                                                            android:textColor="@color/colorRed"
-                                                            android:textSize="15sp"
-                                                            android:layout_marginRight="5.5dp"
-                                                            android:layout_marginTop="1dp"/>
-                                                    </LinearLayout>
-                                                </RelativeLayout>
+                                                    android:layout_height="match_parent"
+                                                    app:srcCompat="@drawable/ic_message_rgb"/>
                                             </LinearLayout>
 
                                         </LinearLayout>
@@ -177,36 +155,10 @@
                                             android:layout_weight="1"
                                             android:gravity="center"
                                             android:orientation="vertical">
-                                            <LinearLayout
+                                            <ImageView
                                                 android:layout_width="40dp"
-                                                android:layout_height="40dp">
-                                                <RelativeLayout
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="match_parent">
-                                                    <LinearLayout
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="match_parent"
-                                                        android:gravity="center">
-                                                        <ImageView
-                                                            android:layout_width="40dp"
-                                                            android:layout_height="40dp"
-                                                            app:srcCompat="@drawable/notification"/>
-                                                    </LinearLayout>
-                                                    <LinearLayout
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="match_parent"
-                                                        android:gravity="end">
-                                                        <TextView
-                                                            android:layout_width="wrap_content"
-                                                            android:layout_height="wrap_content"
-                                                            android:text="9"
-                                                            android:textColor="@color/colorRed"
-                                                            android:textSize="15sp"
-                                                            android:layout_marginRight="6.5dp"
-                                                            android:layout_marginTop="4.7dp"/>
-                                                    </LinearLayout>
-                                                </RelativeLayout>
-                                            </LinearLayout>
+                                                android:layout_height="40dp"
+                                                app:srcCompat="@drawable/bell"/>
 
                                         </LinearLayout>
                                         <LinearLayout
@@ -227,15 +179,7 @@
                             </RelativeLayout>
 
                         </RelativeLayout>
-                        <androidx.appcompat.widget.Toolbar
-                            android:id="@+id/toolbar"
-                            android:layout_width="match_parent"
-                            android:layout_height="?attr/actionBarSize"
-                            android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
-                            app:contentInsetStart="72dp"
-                            app:layout_collapseMode="pin"
-                            app:popupTheme="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small"
-                            android:tooltipText="My Profile"/>
+
 
                     </com.google.android.material.appbar.CollapsingToolbarLayout>
 
