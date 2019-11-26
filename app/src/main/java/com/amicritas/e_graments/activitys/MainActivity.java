@@ -1,6 +1,5 @@
 package com.amicritas.e_graments.activitys;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -10,10 +9,10 @@ import androidx.fragment.app.Fragment;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Gravity;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -28,12 +27,10 @@ import com.amicritas.e_graments.fragments.TimelineFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.Objects;
-
 public class MainActivity extends AppCompatActivity {
     FloatingActionButton postFloatingActionButton;
     ImageView backArrowImg, ivHomeicon, ivProfileIcon, tvTextHome, tvProfileText, ivIconFavorite, ivTextFavorite;
-    LinearLayout layoutProfile, layoutHome, layoutSave, dehazeLayout, layoutTopProfile,viewProfileLinerLayout,messageLayout, notificationLayout, myGetHelpLayout;
+    LinearLayout layoutProfile, layoutHome, layoutSave, dehazeLayout, logoutLayout, layoutTopProfile,viewProfileLinerLayout,messageLayout, notificationLayout, myGetHelpLayout;
     Fragment selectedFragment = null;
     Toolbar toolbar;
     DrawerLayout drawerLayout;
@@ -44,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
     static String CLICK_STATE = "home";
 
+    SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         headerView = navigationView.getHeaderView(0);
 
         layoutTopProfile = findViewById(R.id.layoutTopProfile);
+        logoutLayout = headerView.findViewById(R.id.myLoguotLayout);
         tvUserNameNav = findViewById(R.id.tvUserNameNav);
 
         notificationLayout = findViewById(R.id.notificationLayout);
@@ -72,8 +72,11 @@ public class MainActivity extends AppCompatActivity {
         dehazeLayout = findViewById(R.id.dehazeLayout);
         appBarTitleTv = findViewById(R.id.tvAppBarTitle);
         layoutHome.setBackgroundResource(R.drawable.nav_button_background);
+        postFloatingActionButton = findViewById(R.id.floatingActionButtonAddPost);
 
         setSupportActionBar(toolbar);
+
+        sharedPreferences = getSharedPreferences("e_garments", MODE_PRIVATE);
 
         onBackArrow();
         setProfile();
@@ -81,20 +84,38 @@ public class MainActivity extends AppCompatActivity {
         setSavePost();
         setDehaze();
         setTopProfile();
+        onfloatingActionButton();
+        setProfileView();
+        setGetHelp();
+        setLogOut();
 
-        postFloatingActionButton = findViewById(R.id.floatingActionButtonAddPost);
+
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
                     new TimelineFragment()).commit();
         }
 
-        onfloatingActionButton();
-        setClick();
-        setGetHelp();
+
 
 
         //tvUserNameNav.setText("sou");
+    }
+
+    private void setLogOut() {
+        logoutLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("loginType", false);
+                editor.apply();
+                editor.commit();
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 
     private void setGetHelp() {
@@ -108,13 +129,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void setClick() {
+    private void setProfileView() {
 
         viewProfileLinerLayout = headerView.findViewById(R.id.viewProfileLinerLayout);
         viewProfileLinerLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "see profile", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, UserInformationUtilsActivity.class);
+                drawerLayout.closeDrawers();
+                startActivity(intent);
             }
         });
 

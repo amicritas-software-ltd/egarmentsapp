@@ -74,6 +74,7 @@
                     <LinearLayout
                         android:foreground="?android:attr/selectableItemBackground"
                         android:clickable="true"
+
                         android:id="@+id/layoutHome"
                         android:layout_width="50dp"
                         android:layout_height="match_parent"

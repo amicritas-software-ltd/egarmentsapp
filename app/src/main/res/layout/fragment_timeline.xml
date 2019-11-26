@@ -6,7 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.TimelineFragment"
     android:orientation="vertical"
-    tools:ignore="ExtraText">
+    tools:ignore="ExtraText"
+    android:background="@color/grayWhite">
 
 
     <com.google.android.material.card.MaterialCardView
@@ -174,10 +175,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <LinearLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center">
                 <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/loaderView"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:src="@drawable/loader"/>
@@ -190,7 +193,8 @@
                 app:layoutAnimation="@anim/layout_animation_from_bottom"
                 app:layoutManagerOrientation="vertical"
                 app:layoutManagerReverse="false"
-                app:layoutManagerType="linear">
+                app:layoutManagerType="linear"
+                android:layout_marginBottom="10dp">
 
             </com.mlsdev.animatedrv.AnimatedRecyclerView>
         </RelativeLayout>

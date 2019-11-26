@@ -16,6 +16,7 @@
         <LinearLayout
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
+            android:background="@drawable/custom_ripple"
             android:id="@+id/myPostLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,7 +35,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nexalight"
                         android:textStyle="normal"
-                        android:textFontWeight="600"
+                        android:textFontWeight="500"
                         android:text="My Post"
                         android:textColor="@color/black"
                         android:textSize="16sp"
@@ -59,13 +60,14 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/grayDeep"
+                android:background="@color/grayDeep2"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp" />
         </LinearLayout>
         <LinearLayout
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
+            android:background="@drawable/custom_ripple"
             android:id="@+id/myOrderLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -84,7 +86,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nexalight"
                         android:textStyle="normal"
-                        android:textFontWeight="600"
+                        android:textFontWeight="500"
                         android:text="Order"
                         android:textColor="@color/black"
                         android:textSize="16sp"
@@ -108,7 +110,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/grayDeep"
+                android:background="@color/grayDeep2"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp" />
         </LinearLayout>
@@ -128,6 +130,7 @@
         <LinearLayout
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
+            android:background="@drawable/custom_ripple"
             android:id="@+id/myPersonalInfoLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -145,7 +148,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nexalight"
                         android:textStyle="normal"
-                        android:textFontWeight="600"
+                        android:textFontWeight="500"
                         android:text="Personal information"
                         android:textColor="@color/black"
                         android:textSize="16sp"
@@ -169,13 +172,14 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/grayDeep"
+                android:background="@color/grayDeep2"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp" />
         </LinearLayout>
         <LinearLayout
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
+            android:background="@drawable/custom_ripple"
             android:id="@+id/myPaymentLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -193,7 +197,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nexalight"
                         android:textStyle="normal"
-                        android:textFontWeight="600"
+                        android:textFontWeight="500"
                         android:text="Payment"
                         android:textColor="@color/black"
                         android:textSize="16sp"
@@ -217,13 +221,14 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/grayDeep"
+                android:background="@color/grayDeep2"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp" />
         </LinearLayout>
         <LinearLayout
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
+            android:background="@drawable/custom_ripple"
             android:id="@+id/myTradeLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -241,7 +246,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nexalight"
                         android:textStyle="normal"
-                        android:textFontWeight="600"
+                        android:textFontWeight="500"
                         android:text="Trade license and NID"
                         android:textColor="@color/black"
                         android:textSize="16sp"
@@ -265,7 +270,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/grayDeep"
+                android:background="@color/grayDeep2"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp" />
         </LinearLayout>
@@ -285,6 +290,7 @@
         <LinearLayout
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
+            android:background="@drawable/custom_ripple"
             android:id="@+id/myProfileSatingLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -302,7 +308,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nexalight"
                         android:textStyle="normal"
-                        android:textFontWeight="600"
+                        android:textFontWeight="500"
                         android:text="Profile setting"
                         android:textColor="@color/black"
                         android:textSize="16sp"
@@ -326,7 +332,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/grayDeep"
+                android:background="@color/grayDeep2"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp" />
         </LinearLayout>
@@ -334,6 +340,7 @@
         <LinearLayout
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
+            android:background="@drawable/custom_ripple"
             android:id="@+id/mySwitchAccountModeLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -351,7 +358,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nexalight"
                         android:textStyle="normal"
-                        android:textFontWeight="600"
+                        android:textFontWeight="500"
                         android:text="Switch account mode"
                         android:textColor="@color/black"
                         android:textSize="16sp"
@@ -388,13 +395,14 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/grayDeep"
+                android:background="@color/grayDeep2"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp" />
         </LinearLayout>
         <LinearLayout
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
+            android:background="@drawable/custom_ripple"
             android:id="@+id/myLogoutLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -412,7 +420,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nexalight"
                         android:textStyle="normal"
-                        android:textFontWeight="600"
+                        android:textFontWeight="500"
                         android:text="Log out"
                         android:textColor="@color/colorPrimary"
                         android:textSize="16sp"
@@ -436,7 +444,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/grayDeep"
+                android:background="@color/grayDeep2"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp" />
         </LinearLayout>

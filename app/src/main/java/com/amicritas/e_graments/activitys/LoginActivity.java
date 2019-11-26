@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,11 +26,12 @@ import com.facebook.accountkit.ui.LoginType;
 
 
 public class LoginActivity extends AppCompatActivity {
+    private SharedPreferences sharedPreferences;
     private TextView txtForgotPwd, signUpTv;
     private Button loginWithFbBtn, signInBtn;
     private static final int APP_REQUEST_CODE = 123;
     private PhoneNumber phoneNumber = new PhoneNumber("+880","01761302367","BD");
-
+    private boolean LOGIN_STATE;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +43,16 @@ public class LoginActivity extends AppCompatActivity {
         onSignUp();
         onFbLogin();
         onForgotPassword();
+
+        sharedPreferences = getSharedPreferences("e_garments", MODE_PRIVATE);
+
+        LOGIN_STATE = sharedPreferences.getBoolean("loginType", false);
+
+        if (LOGIN_STATE == true){
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
     }
 
@@ -58,6 +70,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // startLoginPage(LoginType.PHONE);
 
+                Toast.makeText(LoginActivity.this, ""+sharedPreferences.getString("loginType","2"), Toast.LENGTH_SHORT).show();
                 showForgotPwdDialog();
             }
         });
@@ -185,6 +198,10 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("loginType", true);
+                editor.apply();
+                editor.commit();
                 startActivity(intent);
                 finish();
             }

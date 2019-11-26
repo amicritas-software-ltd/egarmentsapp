@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -41,12 +42,14 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import pl.droidsonroids.gif.GifImageView;
 
 
 public class TimelineFragment extends Fragment implements PostAdapter.PostAdapterEvent {
     private RecyclerView postRv;
     private TextView mainMenuTv;
     private List<PostDemo> postDemoList;
+    private GifImageView loderView;
 
     private ImageView messageIv;
     private ImageButton closeSearchImgBtn;
@@ -76,7 +79,7 @@ public class TimelineFragment extends Fragment implements PostAdapter.PostAdapte
         locationFilterBtn = view.findViewById(R.id.btnLocationFilter);
         searchAc = view.findViewById(R.id.acSearch);
         mainMenuTv = view.findViewById(R.id.tvMainMenu);
-       // messageIv = view.findViewById(R.id.ivMessage);
+        loderView = view.findViewById(R.id.loaderView);
         layoutCloseSearch = view.findViewById(R.id.layoutCloseSearch);
 
 
@@ -112,16 +115,17 @@ public class TimelineFragment extends Fragment implements PostAdapter.PostAdapte
                 .reverse(false)
                 .build();
         recyclerView.scheduleLayoutAnimation();
-        postRv.setAdapter(postAdapter);
 
-        /*int SPLASH_TIMR_OUT = 2000;
+
+        int SPLASH_TIMR_OUT = 1500;
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
 
-
+                postRv.setAdapter(postAdapter);
+                loderView.setVisibility(View.GONE);
             }
-        },SPLASH_TIMR_OUT);*/
+        },SPLASH_TIMR_OUT);
 
         return view;
 

@@ -3,7 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingRight="5dp"
+    android:paddingLeft="5dp"
+    android:paddingTop="5dp">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -108,7 +111,8 @@
                                     android:text="Accessories"
                                     android:layout_marginStart="5dp"
                                     android:gravity="bottom"
-                                    android:fontFamily="@font/righteous_regular"/>
+                                    android:fontFamily="@font/nexalight"
+                                    android:textSize="14sp"/>
                             </LinearLayout>
 
                         </LinearLayout>
@@ -121,9 +125,10 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Zipper"
-                            android:fontFamily="@font/nexabold"
+                            android:fontFamily="@font/nexalight"
+                            android:textFontWeight="600"
                             android:textColor="@color/black"
-                            android:textSize="20sp"
+                            android:textSize="18sp"
                             android:layout_marginBottom="10dp"
                             android:layout_marginLeft="5dp"
                             />

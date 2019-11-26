@@ -3,6 +3,7 @@ package com.amicritas.e_graments.fragments;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
@@ -24,12 +25,15 @@ import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import com.amicritas.e_graments.R;
+import com.amicritas.e_graments.activitys.LoginActivity;
 import com.amicritas.e_graments.activitys.UserUtilsActivity;
 import com.amicritas.e_graments.utils.OnBackPress;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import java.util.Objects;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 public class MyProfileFragment extends Fragment {
@@ -38,16 +42,18 @@ public class MyProfileFragment extends Fragment {
     //Toolbar toolbar;
     CollapsingToolbarLayout mCollapsingToolbarLayout;
     AppBarLayout appBarLayout;
-    LinearLayout myPostLayout, myOrderLayout, myPaymentLayout;
+    LinearLayout myPostLayout, myOrderLayout, myPaymentLayout, myLogOutLayout;
     Dialog myDialog;
 
 
+    SharedPreferences sharedPreferences;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_my_profile, container, false);
 
+        myLogOutLayout = view.findViewById(R.id.myLogoutLayout);
         myPaymentLayout = view.findViewById(R.id.myPaymentLayout);
         myOrderLayout = view.findViewById(R.id.myOrderLayout);
         myPostLayout = view.findViewById(R.id.myPostLayout);
@@ -59,12 +65,15 @@ public class MyProfileFragment extends Fragment {
 
         myDialog = new Dialog(Objects.requireNonNull(getActivity()));
 
+        sharedPreferences = getActivity().getSharedPreferences("e_garments", MODE_PRIVATE);
+
         //imgBackArrow = view.findViewById(R.id.imgBackArrow);
 
         //setBackPress();
         setMyPost();
         setOrder();
         setPayment();
+        setLogout();
 
         /*appBarLayout.addOnOffsetChangedListener((AppBarLayout.BaseOnOffsetChangedListener) (appBarLayout, i) -> {
             if (i <= -380){
@@ -75,6 +84,22 @@ public class MyProfileFragment extends Fragment {
         });*/
 
         return view;
+    }
+
+    private void setLogout() {
+        myLogOutLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("loginType", false);
+                editor.apply();
+                editor.commit();
+                startActivity(intent);
+                getActivity().finish();
+            }
+        });
+
     }
 
     private void setPayment() {
