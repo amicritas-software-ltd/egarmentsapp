@@ -43,6 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Sign up to continue "
+                android:fontFamily="@font/nexalight"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="16dp" />
 
@@ -186,14 +187,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="All ready have account?"
-                    android:textSize="16dp" />
+                    android:textSize="16dp"
+                    android:fontFamily="@font/nexalight"/>
 
                 <TextView
                     android:id="@+id/tvSignIn"
@@ -202,6 +204,7 @@
                     android:layout_marginLeft="6dp"
                     android:layout_marginRight="20dp"
                     android:text="@string/sign_in"
+                    android:fontFamily="@font/nexalight"
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp"
                     tools:ignore="RtlHardcoded" />
@@ -210,10 +213,10 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:layout_marginRight="130dp"
+                android:layout_marginRight="100dp"
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/black"/>
+                android:background="@color/gray"/>
 
         </LinearLayout>
     </LinearLayout>

@@ -4,12 +4,19 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,18 +31,24 @@ import com.facebook.accountkit.ui.AccountKitActivity;
 import com.facebook.accountkit.ui.AccountKitConfiguration;
 import com.facebook.accountkit.ui.LoginType;
 
+import java.util.Objects;
+
 
 public class LoginActivity extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
     private TextView txtForgotPwd, signUpTv;
+    private EditText userPasswordEt;
     private Button loginWithFbBtn, signInBtn;
     private static final int APP_REQUEST_CODE = 123;
     private PhoneNumber phoneNumber = new PhoneNumber("+880","01761302367","BD");
     private boolean LOGIN_STATE;
+    private Dialog myDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        myDialog = new Dialog(LoginActivity.this);
 
 
         init();
@@ -62,6 +75,9 @@ public class LoginActivity extends AppCompatActivity {
         signUpTv = findViewById(R.id.tvSignUp);
         loginWithFbBtn = findViewById(R.id.btnFbLogin);
         signInBtn = findViewById(R.id.btnLogin);
+        userPasswordEt = findViewById(R.id.etUserPassword);
+        //userPasswordEt.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+        //userPasswordEt.setTransformationMethod(new PasswordTransformationMethod());
     }
 
     private void onForgotPassword() {
@@ -70,7 +86,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // startLoginPage(LoginType.PHONE);
 
-                Toast.makeText(LoginActivity.this, ""+sharedPreferences.getString("loginType","2"), Toast.LENGTH_SHORT).show();
                 showForgotPwdDialog();
             }
         });
@@ -131,10 +146,44 @@ public class LoginActivity extends AppCompatActivity {
         signUpTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
-                startActivity(intent);
+                showUserTypeDialog();
+                /*Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+                startActivity(intent);*/
             }
         });
+    }
+
+    private void showUserTypeDialog() {
+
+        Button btnCancelUserType, btnContinueUserType;
+
+        myDialog.setContentView(R.layout.user_type_layout);
+        btnContinueUserType = myDialog.findViewById(R.id.btnContinueUserType);
+        btnCancelUserType = myDialog.findViewById(R.id.btnCancelUserType);
+
+        btnCancelUserType.setOnClickListener(v1 ->
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        myDialog.dismiss();
+                    }
+                }, 300)
+                );
+
+        btnContinueUserType.setOnClickListener(v12 -> {
+            Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+            startActivity(intent);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    myDialog.dismiss();
+                }
+            }, 300);
+
+        });
+
+        Objects.requireNonNull(myDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        myDialog.show();
     }
 
     private void showForgotPwdDialog() {
@@ -197,6 +246,7 @@ public class LoginActivity extends AppCompatActivity {
         signInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putBoolean("loginType", true);

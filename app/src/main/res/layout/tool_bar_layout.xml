@@ -1,6 +1,6 @@
 <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="?attr/actionBarSize"
     android:background="#2B6885"
     app:cardCornerRadius="10dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -20,29 +20,29 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="end"
+        android:gravity="center_vertical|end"
         android:orientation="horizontal">
         <LinearLayout
             android:id="@+id/messageLayout"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_marginRight="18dp">
             <ImageView
                 android:id="@+id/ivMessage"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                app:srcCompat="@drawable/message_white"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/ic_message_white"
                 />
         </LinearLayout>
         <LinearLayout
             android:id="@+id/notificationLayout"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_marginRight="18dp">
             <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                app:srcCompat="@drawable/notification_white"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/ic_notification_white"
                 />
         </LinearLayout>
         <LinearLayout

@@ -136,8 +136,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, UserInformationUtilsActivity.class);
-                drawerLayout.closeDrawers();
                 startActivity(intent);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        drawerLayout.closeDrawers();
+                    }
+                }, 500);
             }
         });
 

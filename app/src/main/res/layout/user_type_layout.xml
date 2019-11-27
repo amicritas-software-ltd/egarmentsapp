@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    app:cardCornerRadius="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Registration with"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/nexalight"
+                        />
+                </androidx.appcompat.widget.Toolbar>
+
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:checkedButton="@+id/phoneNumber"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/phoneNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="16dp"
+                        android:drawableLeft="@drawable/ic_phone_android_black_24dp"
+                        android:text="Basic Account"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/nexalight"
+                        android:textFontWeight="400"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="90dp"
+                        android:text="Looking for a basic account option?"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/nexalight"/>
+
+                    <RadioButton
+                        android:id="@+id/premimumAccount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="16dp"
+                        android:drawableLeft="@drawable/ic_phone_android_black_24dp"
+                        android:text="Premium Account"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/nexalight"
+                        android:textFontWeight="400"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="90dp"
+                        android:text="The Premium Account accommodates the experienced retail traders. A key feature is the flexibility in position sizing."
+                        android:textSize="14sp"
+                        android:layout_marginRight="20dp"
+                        android:fontFamily="@font/nexalight"/>
+
+
+                </RadioGroup>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end|center"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="20dp">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCancelUserType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_marginEnd="20dp"
+                        android:gravity="center"
+                        android:text="Cancel"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        app:strokeColor="@color/colorPrimary"
+                        android:fontFamily="@font/nexalight"
+                        android:textAllCaps="false"
+                        app:cornerRadius="20dp"
+                        android:drawableStart="@mipmap/ic_launcher" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnContinueUserType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="Next"
+                        android:fontFamily="@font/nexalight"
+                        android:textAllCaps="false"
+                        app:cornerRadius="20dp"
+                        android:drawableStart="@mipmap/ic_launcher" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</LinearLayout>
+
