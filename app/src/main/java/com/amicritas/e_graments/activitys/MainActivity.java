@@ -10,6 +10,7 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Gravity;
@@ -26,6 +27,7 @@ import com.amicritas.e_graments.fragments.MyProfileFragment;
 import com.amicritas.e_graments.fragments.TimelineFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
     FloatingActionButton postFloatingActionButton;
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     View headerView;
     private static final int TIME_INTERVAL = 2000;
     private long mBackPressed;
+    private FirebaseAuth mAuth;
 
     static String CLICK_STATE = "home";
 
@@ -47,32 +50,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         NavigationView navigationView = findViewById(R.id.navigationView);
         headerView = navigationView.getHeaderView(0);
 
-        layoutTopProfile = findViewById(R.id.layoutTopProfile);
-        logoutLayout = headerView.findViewById(R.id.myLoguotLayout);
-        tvUserNameNav = findViewById(R.id.tvUserNameNav);
+        mAuth = FirebaseAuth.getInstance();
 
-        notificationLayout = findViewById(R.id.notificationLayout);
-        messageLayout = findViewById(R.id.messageLayout);
-        ivProfileIcon = findViewById(R.id.ivProfileIcon);
-        drawerLayout = findViewById(R.id.drawer_layout);
-        ivHomeicon = findViewById(R.id.ivHomeicon);
-        layoutProfile = findViewById(R.id.layoutProfile);
-        layoutHome = findViewById(R.id.layoutHome);
-        layoutSave = findViewById(R.id.layoutSave);
-        backArrowImg = findViewById(R.id.imgBackArrow);
-        tvTextHome = findViewById(R.id.tvTextHome);
-        tvProfileText = findViewById(R.id.tvProfileText);
-        ivTextFavorite = findViewById(R.id.ivTextFavorite);
-        ivIconFavorite = findViewById(R.id.ivIconFavorite);
-        toolbar = findViewById(R.id.toolbar);
-        dehazeLayout = findViewById(R.id.dehazeLayout);
-        appBarTitleTv = findViewById(R.id.tvAppBarTitle);
-        layoutHome.setBackgroundResource(R.drawable.nav_button_background);
-        postFloatingActionButton = findViewById(R.id.floatingActionButtonAddPost);
+
+        init(headerView);
 
         setSupportActionBar(toolbar);
 
@@ -89,24 +75,46 @@ public class MainActivity extends AppCompatActivity {
         setGetHelp();
         setLogOut();
 
-
+        tvUserNameNav.setText(mAuth.getCurrentUser().getDisplayName());
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
                     new TimelineFragment()).commit();
         }
 
+    }
+
+    private void init(View headerView) {
+        notificationLayout = findViewById(R.id.notificationLayout);
+        messageLayout = findViewById(R.id.messageLayout);
+        ivProfileIcon = findViewById(R.id.ivProfileIcon);
+        drawerLayout = findViewById(R.id.drawer_layout);
+        ivHomeicon = findViewById(R.id.ivHomeicon);
+        layoutProfile = findViewById(R.id.layoutProfile);
+        layoutHome = findViewById(R.id.layoutHome);
+        layoutSave = findViewById(R.id.layoutSave);
+        backArrowImg = findViewById(R.id.imgBackArrow);
+        //tvProfileText = findViewById(R.id.tvProfileText);
+        ivIconFavorite = findViewById(R.id.ivIconFavorite);
+        toolbar = findViewById(R.id.toolbar);
+        dehazeLayout = findViewById(R.id.dehazeLayout);
+        appBarTitleTv = findViewById(R.id.tvAppBarTitle);
+        layoutHome.setBackgroundResource(R.drawable.nav_button_background);
+        postFloatingActionButton = findViewById(R.id.floatingActionButtonAddPost);
+
+        layoutTopProfile = findViewById(R.id.layoutTopProfile);
+        logoutLayout = headerView.findViewById(R.id.myLoguotLayout);
+        tvUserNameNav = headerView.findViewById(R.id.tvUserNameNav);
 
 
-
-        //tvUserNameNav.setText("sou");
     }
 
     private void setLogOut() {
         logoutLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                mAuth.signOut();
+                Intent intent = new Intent(MainActivity.this, LoginUtilActivity.class);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putBoolean("loginType", false);
                 editor.apply();

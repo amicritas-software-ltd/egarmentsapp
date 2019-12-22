@@ -26,6 +26,7 @@ import android.widget.Toast;
 
 import com.amicritas.e_graments.R;
 import com.amicritas.e_graments.activitys.LoginActivity;
+import com.amicritas.e_graments.activitys.LoginUtilActivity;
 import com.amicritas.e_graments.activitys.UserUtilsActivity;
 import com.amicritas.e_graments.utils.OnBackPress;
 import com.google.android.material.appbar.AppBarLayout;
@@ -90,7 +91,7 @@ public class MyProfileFragment extends Fragment {
         myLogOutLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                Intent intent = new Intent(getActivity(), LoginUtilActivity.class);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putBoolean("loginType", false);
                 editor.apply();
@@ -160,7 +161,7 @@ public class MyProfileFragment extends Fragment {
     private void setMyPost() {
         myPostLayout.setOnClickListener(v -> {
             FragmentTransaction fragmentTransaction = Objects.requireNonNull(getFragmentManager()).beginTransaction();
-            fragmentTransaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right);
+            fragmentTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_right);
 
             fragmentTransaction.replace(R.id.main_frame, new MyPostFragment());
             fragmentTransaction.commit();

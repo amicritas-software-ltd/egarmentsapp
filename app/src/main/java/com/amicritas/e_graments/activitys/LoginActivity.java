@@ -105,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 startActivityForResult(intent,APP_REQUEST_CODE);
 
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
 
             }
         });
@@ -162,12 +162,7 @@ public class LoginActivity extends AppCompatActivity {
         btnCancelUserType = myDialog.findViewById(R.id.btnCancelUserType);
 
         btnCancelUserType.setOnClickListener(v1 ->
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        myDialog.dismiss();
-                    }
-                }, 300)
+                new Handler().postDelayed(() -> myDialog.dismiss(), 300)
                 );
 
         btnContinueUserType.setOnClickListener(v12 -> {
@@ -210,7 +205,7 @@ public class LoginActivity extends AppCompatActivity {
 
         startActivityForResult(intent,APP_REQUEST_CODE);
 
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
     }
 
     private void startLoginPageForPhone(LoginType phone) {
@@ -224,7 +219,7 @@ public class LoginActivity extends AppCompatActivity {
 
         startActivityForResult(intent,APP_REQUEST_CODE);
 
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
 
     }
 
@@ -238,7 +233,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void finish() {
         super.finish();
-        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_right);
     }
 
 

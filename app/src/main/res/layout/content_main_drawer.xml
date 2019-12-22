@@ -74,7 +74,6 @@
                     <LinearLayout
                         android:foreground="?android:attr/selectableItemBackground"
                         android:clickable="true"
-
                         android:id="@+id/layoutHome"
                         android:layout_width="50dp"
                         android:layout_height="match_parent"
@@ -84,16 +83,22 @@
                             android:id="@+id/ivHomeicon"
                             android:layout_width="wrap_content"
                             android:layout_height="18dp"
-                            android:padding="0dp"
-                            app:srcCompat="@drawable/ic_home_violet"/>
+                            app:srcCompat="@drawable/ic_home_white"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Home"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/nexalight"
+                            android:textSize="10sp"/>
 
-                        <ImageView
+                       <!-- <ImageView
                             android:id="@+id/tvTextHome"
                             android:layout_width="match_parent"
                             android:layout_height="10dp"
                             android:layout_marginTop="3dp"
                             app:srcCompat="@drawable/home_nav_text_white"
-                            />
+                            />-->
                     </LinearLayout>
 
                 </LinearLayout>
@@ -119,15 +124,21 @@
                             android:id="@+id/ivIconFavorite"
                             android:layout_width="wrap_content"
                             android:layout_height="18dp"
-                            android:padding="0dp"
                             app:srcCompat="@drawable/ic_heart_outline"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Favorite"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/nexalight"
+                            android:textSize="10sp"/>
 
-                        <ImageView
+                        <!--<ImageView
                             android:id="@+id/ivTextFavorite"
                             android:layout_width="match_parent"
                             android:layout_height="10dp"
                             app:srcCompat="@drawable/favorite_text_white"
-                            />
+                            />-->
                     </LinearLayout>
 
                 </LinearLayout>
@@ -164,18 +175,25 @@
                             android:layout_height="20dp">
                             <ImageView
                                 android:id="@+id/ivIconTopProfile"
-                                android:layout_width="wrap_content"
-                                android:layout_height="15dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="18dp"
                                 android:padding="0dp"
-                                app:srcCompat="@drawable/top_profile"/>
+                                app:srcCompat="@drawable/ic_star_white"/>
                         </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Top Profile"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/nexalight"
+                            android:textSize="10sp"/>
 
-                        <ImageView
+                        <!--<ImageView
                             android:id="@+id/ivTextTopProfile"
                             android:layout_width="match_parent"
                             android:layout_height="10dp"
                             app:srcCompat="@drawable/top_profile_text_white"
-                            />
+                            />-->
                     </LinearLayout>
 
                 </LinearLayout>
@@ -199,17 +217,25 @@
                         <ImageView
                             android:id="@+id/ivProfileIcon"
                             android:layout_width="wrap_content"
-                            android:layout_height="15dp"
+                            android:layout_height="18dp"
                             android:padding="0dp"
-                            app:srcCompat="@drawable/user"/>
+                            app:srcCompat="@drawable/user"
+                            android:layout_marginBottom="3dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Profile"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/nexalight"
+                            android:textSize="10sp"/>
 
-                        <ImageView
+                        <!--<ImageView
                             android:id="@+id/tvProfileText"
                             android:layout_width="match_parent"
                             android:layout_height="10dp"
                             android:layout_marginTop="5dp"
                             app:srcCompat="@drawable/profille_nav_text_white"
-                            />
+                            />-->
                     </LinearLayout>
 
                 </LinearLayout>

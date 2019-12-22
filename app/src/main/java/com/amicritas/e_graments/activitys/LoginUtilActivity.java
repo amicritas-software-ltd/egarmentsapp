@@ -7,21 +7,21 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
 import com.amicritas.e_graments.R;
+import com.amicritas.e_graments.fragments.LoginFragment;
 import com.amicritas.e_graments.fragments.TimelineFragment;
-import com.amicritas.e_graments.fragments.UserInformationFragment;
 
-public class UserInformationUtilsActivity extends AppCompatActivity {
-
+public class LoginUtilActivity extends AppCompatActivity {
     Fragment selectedFragment = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_information_utils);
+        setContentView(R.layout.activity_login_util);
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        selectedFragment = new UserInformationFragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.user_information_frame,
-                selectedFragment).commit();
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_login,
+                    new LoginFragment()).commit();
+        }
     }
 }

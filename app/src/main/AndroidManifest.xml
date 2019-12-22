@@ -10,11 +10,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activitys.UserInformationUtilsActivity" />
+        <activity android:name=".activitys.LoginUtilActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activitys.UserInformationUtilsActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activitys.UserUtilsActivity"
             android:parentActivityName=".activitys.MainActivity"
-            android:theme="@style/UtilPageTheme" />
+            android:theme="@style/UtilPageTheme"
+            android:screenOrientation="portrait"/>
         <activity android:name=".activitys.PostActivity" />
         <activity android:name=".activitys.VarifyActivity" />
         <activity android:name=".activitys.MessengerDialogsListActivity" />
@@ -72,8 +76,8 @@
             android:name="com.facebook.accountkit.ClientToken"
             android:value="@string/ACCOUNT_KIT_CLIENT_TOKEN" />
     </application>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 </manifest>

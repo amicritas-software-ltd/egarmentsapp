@@ -67,7 +67,8 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:errorEnabled="true">
+                app:errorEnabled="true"
+                tools:ignore="ExtraText">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtNameReg"
@@ -75,7 +76,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
-                    android:hint="Name"
                     android:inputType="textPersonName"
                     android:drawableRight="@drawable/ic_person_black_24dp"
                     android:backgroundTint="@android:color/black"
@@ -83,6 +83,8 @@
                     android:textColorHint="@android:color/darker_gray"
                     android:textSize="20sp"
                     android:imeOptions="actionNext"/>
+                    <!--android:hint="Name"-->
+
                 <TextView
                     android:id="@+id/tvErrorNameReg"
                     android:layout_marginTop="-25dp"
