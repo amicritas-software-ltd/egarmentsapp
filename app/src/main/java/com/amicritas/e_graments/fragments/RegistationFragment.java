@@ -43,11 +43,11 @@ public class RegistationFragment extends Fragment {
 
     private String passwordPattarn = "^" +
             //"(?=.*[0-9])" +         //at least 1 digit
-            "(?=.*[a-z])" +         //at least 1 lower case letter
-            "(?=.*[A-Z])" +         //at least 1 upper case letter
-            "(?=.*[a-zA-Z])" +      //any letter
+            //"(?=.*[a-z])" +         //at least 1 lower case letter
+            //"(?=.*[A-Z])" +         //at least 1 upper case letter
+            //"(?=.*[a-zA-Z])" +      //any letter
             //"(?=.*[@#$%^&+=])" +    //at least 1 special character
-            "(?=\\S+$)" +           //no white spaces
+            //"(?=\\S+$)" +           //no white spaces
             ".{6,}" +               //at least 4 characters
             "$";
 
@@ -78,8 +78,7 @@ public class RegistationFragment extends Fragment {
         passwordErrorTv = view.findViewById(R.id.tvErrorPasswordReg);
         progressLayout = view.findViewById(R.id.progressLayout);
 
-        passwordMatcher = Pattern.compile(passwordPattarn).matcher(edtpasswordReg.getText().toString().trim());
-        emailMatcher = Pattern.compile(emailPattarn).matcher(edtEmailReg.getText().toString().trim());
+
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -107,20 +106,15 @@ public class RegistationFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable editable) {
 
+                passwordMatcher = Pattern.compile(passwordPattarn).matcher(edtpasswordReg.getText().toString());
+                emailMatcher = Pattern.compile(emailPattarn).matcher(edtEmailReg.getText().toString().trim());
+
                 nameSearchKey = nameEt.getText().toString().trim();
                 phoneSearchKey = edtEmailReg.getText().toString().trim();
                 passwordsearchKey = edtpasswordReg.getText().toString().trim();
+                
 
-
-
-                if (editable == nameEt.getEditableText()){
-                    if (nameSearchKey.isEmpty()){
-                        nameErrorTv.setText("name must require*");
-                    }
-                    else if (!nameSearchKey.isEmpty()){
-                        nameErrorTv.setText("");
-                    }
-                }else if (editable == edtEmailReg.getEditableText()){
+                if (editable == edtEmailReg.getEditableText()){
                     if (phoneSearchKey.isEmpty()){
                         emailErrorTv.setText("Email not empty*");
                     }else {
@@ -137,7 +131,10 @@ public class RegistationFragment extends Fragment {
                     }
                     else if (!passwordsearchKey.isEmpty()){
                         if (!passwordMatcher.matches()){
-                            passwordErrorTv.setText("password at least 1 upper & lower letter and 6 length*");
+                            //passwordErrorTv.setText("password at least 1 upper & lower letter and 6 length**");
+                            passwordErrorTv.setText("password at least 6 digit*");
+                            Boolean pass = passwordMatcher.matches();
+                            //onMacher(pass);
                         }else {
                             passwordErrorTv.setText("");
                         }
@@ -166,28 +163,31 @@ public class RegistationFragment extends Fragment {
         }else {
             nameEt.setHint("Factory name");
         }
-        //nameEt.setHint(ContextCompat.get);
 
-        //edtPhoneReg.setHint(userType);
     }
 
     private void setOnSignUp() {
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*Fragment selectedFragment = new AccountPaymentFragment();
-                Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction().setCustomAnimations( R.anim.slide_in_right, R.anim.slide_out_right).replace(R.id.main_frame_login,
-                        selectedFragment).addToBackStack("tag").commit();*/
-                progressLayout.setVisibility(View.VISIBLE);
+
                 userNameReg = nameEt.getText().toString().trim();
                 userEmailReg = edtEmailReg.getText().toString().trim();
-                userPasswordReg = edtpasswordReg.getText().toString().trim();
-                if (!userNameReg.isEmpty() && emailMatcher.matches() && passwordMatcher.matches()){
-                    createUser(userNameReg, userEmailReg, userPasswordReg);
+                userPasswordReg = edtpasswordReg.getText().toString();
+                if (!userNameReg.isEmpty() && !userEmailReg.isEmpty() && !userPasswordReg.isEmpty()){
+
+                    if (emailMatcher.matches() && passwordMatcher.matches()){
+                        progressLayout.setVisibility(View.VISIBLE);
+                        createUser(userNameReg, userEmailReg, userPasswordReg);
+                    }
+                    else {
+                        Toast.makeText(getActivity(), "Input all valid information", Toast.LENGTH_SHORT).show();
+                    }
+
+                }else {
+                    Toast.makeText(getActivity(), "Input all required field", Toast.LENGTH_SHORT).show();
                 }
-                else {
-                    Toast.makeText(getActivity(), "Input all require fiend", Toast.LENGTH_SHORT).show();
-                }
+
             }
         });
     }

@@ -57,7 +57,7 @@ public class LoginFragment extends Fragment {
             //"(?=.*[A-Z])" +         //at least 1 upper case letter
             //"(?=.*[a-zA-Z])" +      //any letter
             //"(?=.*[@#$%^&+=])" +    //at least 1 special character
-            "(?=\\S+$)" +           //no white spaces
+            //"(?=\\S+$)" +           //no white spaces
             ".{6,}" +               //at least 4 characters
             "$";
 
@@ -134,7 +134,8 @@ public class LoginFragment extends Fragment {
                     }
                     else if (!passwordsearchKey.isEmpty()){
                         if (!passwordMatcher.matches()){
-                            passwordErrorTv.setText("password at least 1 upper & lower letter and 6 length**");
+                            //passwordErrorTv.setText("password at least 1 upper & lower letter and 6 length**");
+                            passwordErrorTv.setText("password at least 6 digit*");
                             Boolean pass = passwordMatcher.matches();
                             //onMacher(pass);
                         }else {
@@ -197,29 +198,34 @@ public class LoginFragment extends Fragment {
                 String email = userEmail.getText().toString().trim();
                 String password = userPassword.getText().toString().trim();
 
-                if(emailMatcher.matches() == true && passwordMatcher.matches() == true){
-                    progressLayout.setVisibility(View.VISIBLE);
-                    mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()){
-                                progressLayout.setVisibility(View.GONE);
-                                Toast.makeText(getActivity(), "login with "+mAuth.getCurrentUser().getDisplayName(), Toast.LENGTH_SHORT).show();
-                                onLoginSuccess();
+                if (!email.isEmpty() && !password.isEmpty()){
+                    if(emailMatcher.matches() == true && passwordMatcher.matches() == true ){
+                        progressLayout.setVisibility(View.VISIBLE);
+                        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()){
+                                    progressLayout.setVisibility(View.GONE);
+                                   // Toast.makeText(getActivity(), "login with "+mAuth.getCurrentUser().getDisplayName(), Toast.LENGTH_SHORT).show();
+                                    onLoginSuccess();
 
+                                }
                             }
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            progressLayout.setVisibility(View.GONE);
-                            Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    });
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                progressLayout.setVisibility(View.GONE);
+                                Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
 
+                    }else {
+                        Toast.makeText(getActivity(), "Input all valid information", Toast.LENGTH_SHORT).show();
+                    }
                 }else {
                     Toast.makeText(getActivity(), "Input all required field", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
     }
