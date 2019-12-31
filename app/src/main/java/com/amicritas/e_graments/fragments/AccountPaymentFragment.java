@@ -1,11 +1,15 @@
 package com.amicritas.e_graments.fragments;
 
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +28,7 @@ import java.util.Objects;
 public class AccountPaymentFragment extends Fragment {
     private LinearLayout skipLlayout;
     private ImageView backButtonIv;
+    private String userType;
 
 
     public AccountPaymentFragment() {
@@ -39,16 +44,25 @@ public class AccountPaymentFragment extends Fragment {
         skipLlayout = view.findViewById(R.id.skipLlayout);
         backButtonIv = view.findViewById(R.id.backButtonIv);
 
+        Bundle bundle = getArguments();
+        userType = bundle.getString("userType");
+
 
         skipLlayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment selectedFragment = new LoginFragment();
+
+
+                Fragment selectedFragment = new RegistationFragment();
                 Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction().setCustomAnimations( R.anim.slide_in_up, R.anim.slide_out_up).replace(R.id.main_frame_login,
                         selectedFragment).addToBackStack("tag").commit();
-                //Toast.makeText(getActivity(), userType, Toast.LENGTH_SHORT).show();
 
-                //startActivity(new Intent(getActivity(), MainActivity.class));
+                Bundle bundle = new Bundle();
+                bundle.putString("userType", userType);
+                bundle.putBoolean("skip", true);
+                selectedFragment.setArguments(bundle);
+                Toast.makeText(getActivity(),userType, Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -56,7 +70,13 @@ public class AccountPaymentFragment extends Fragment {
         backButtonIv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Objects.requireNonNull(getActivity()).onBackPressed();
+                //Objects.requireNonNull(getActivity()).onBackPressed();
+
+                /*Fragment selectedFragment = new RegistationFragment();
+                Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction().setCustomAnimations( R.anim.slide_in_up, R.anim.slide_out_up).replace(R.id.main_frame_login,
+                        selectedFragment).addToBackStack("tag").commit();*/
+                startActivity(new Intent(getActivity(), MainActivity.class));
+
             }
         });
 

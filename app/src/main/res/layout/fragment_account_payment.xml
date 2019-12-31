@@ -247,14 +247,14 @@
                 android:orientation="vertical"
                 android:gravity="center">
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/text_input_name"
+                    android:id="@+id/text_input_card_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:errorEnabled="true"
                     >
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtPhone"
+                        android:id="@+id/edt_card_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
@@ -278,14 +278,14 @@
                         android:layout_weight="1"
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/text_input_name"
+                            android:id="@+id/text_input_expair_date"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:errorEnabled="true"
                             >
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/edtPhone"
+                                android:id="@+id/edt_expair_date"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="30dp"
@@ -306,14 +306,14 @@
                         android:layout_weight="1"
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/text_input_name"
+                            android:id="@+id/text_input_cvv"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:errorEnabled="true"
                             >
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/edtPhone"
+                                android:id="@+id/edt_cvv"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="30dp"

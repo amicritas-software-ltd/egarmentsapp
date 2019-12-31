@@ -8,6 +8,7 @@
     android:orientation="vertical"
     tools:context=".fragments.UserTypeFragment">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -57,39 +58,39 @@
 
         </FrameLayout>
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
+            android:layout_height="match_parent"
+            android:scrollbars="none">
             <LinearLayout
-                android:id="@+id/selectedViewRelativeLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <RelativeLayout
+                <LinearLayout
+                    android:id="@+id/selectedViewRelativeLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp"
-                    android:orientation="vertical"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:paddingBottom="10dp">
+                    android:orientation="vertical">
 
-                    <LinearLayout
-                        android:id="@+id/basicSelectLayer"
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="220dp"
-                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="30dp"
                         android:orientation="vertical"
-                        android:visibility="gone">
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp">
 
-                        <ScrollView
+                        <LinearLayout
+                            android:id="@+id/basicSelectLayer"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -216,21 +217,17 @@
 
 
                             </LinearLayout>
-                        </ScrollView>
 
-                    </LinearLayout>
+                        </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/buyerSelectLayer"
-                        android:layout_width="match_parent"
-                        android:layout_height="220dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:visibility="gone">
-
-                        <ScrollView
+                        <LinearLayout
+                            android:id="@+id/buyerSelectLayer"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -355,20 +352,16 @@
                                 </LinearLayout>
 
                             </LinearLayout>
-                        </ScrollView>
-                    </LinearLayout>
+                        </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/buyingHoseSelectLayer"
-                        android:layout_width="match_parent"
-                        android:layout_height="220dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:visibility="gone">
-
-                        <ScrollView
+                        <LinearLayout
+                            android:id="@+id/buyingHoseSelectLayer"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -491,20 +484,16 @@
 
 
                             </LinearLayout>
-                        </ScrollView>
-                    </LinearLayout>
+                        </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/factorySelectLayer"
-                        android:layout_width="match_parent"
-                        android:layout_height="220dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:visibility="gone">
-
-                        <ScrollView
+                        <LinearLayout
+                            android:id="@+id/factorySelectLayer"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -626,113 +615,157 @@
                                 </LinearLayout>
 
                             </LinearLayout>
-                        </ScrollView>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/noneSelectLayer"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:visibility="visible">
-
-                        <TextView
-                            android:id="@+id/tvAcTypeTitle"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginRight="20dp"
-                            android:fontFamily="@font/nexalight"
-                            android:gravity="center"
-                            android:text="Select any package to continue sign up"
-                            android:textFontWeight="700"
-                            android:textSize="18sp"
-                            android:textStyle="normal" />
-
-
-                    </LinearLayout>
-
-
-                </RelativeLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:gravity="center"
-                        android:orientation="horizontal">
+                        </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:id="@+id/noneSelectLayer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:paddingRight="10dp">
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <TextView
+                                android:id="@+id/tvAcTypeTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="20dp"
+                                android:fontFamily="@font/nexalight"
+                                android:gravity="center"
+                                android:text="Select any package to continue sign up"
+                                android:textFontWeight="700"
+                                android:textSize="18sp"
+                                android:textStyle="normal" />
+
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
 
                             <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="85dp"
-                                android:gravity="center">
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:paddingRight="10dp">
 
-                                <com.google.android.material.card.MaterialCardView
+                                <LinearLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="70dp"
-                                    app:cardCornerRadius="8dp">
+                                    android:layout_height="85dp"
+                                    android:gravity="center">
 
-                                    <LinearLayout
-                                        android:id="@+id/basicLlayout"
+                                    <com.google.android.material.card.MaterialCardView
                                         android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:gravity="center"
-                                        android:orientation="vertical">
+                                        android:layout_height="70dp"
+                                        app:cardCornerRadius="8dp">
 
-                                        <ImageView
-                                            android:layout_width="30dp"
-                                            android:layout_height="20dp"
-                                            app:srcCompat="@drawable/ic_basic_account_rgb" />
+                                        <LinearLayout
+                                            android:id="@+id/basicLlayout"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
 
-                                        <TextView
-                                            android:id="@+id/basicTv"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:fontFamily="@font/nexalight"
-                                            android:text="Basic Account"
-                                            android:textColor="@color/black" />
-                                    </LinearLayout>
-                                </com.google.android.material.card.MaterialCardView>
+                                            <ImageView
+                                                android:layout_width="30dp"
+                                                android:layout_height="20dp"
+                                                app:srcCompat="@drawable/ic_basic_account_rgb" />
+
+                                            <TextView
+                                                android:id="@+id/basicTv"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:fontFamily="@font/nexalight"
+                                                android:text="Basic Account"
+                                                android:textColor="@color/black" />
+                                        </LinearLayout>
+                                    </com.google.android.material.card.MaterialCardView>
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:paddingLeft="10dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="80dp"
+                                    android:gravity="center">
+
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="70dp"
+                                        android:elevation="5dp"
+                                        app:cardCornerRadius="8dp">
+
+                                        <LinearLayout
+                                            android:id="@+id/buyerLlayout"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+
+                                            <ImageView
+                                                android:layout_width="20dp"
+                                                android:layout_height="20dp"
+                                                app:srcCompat="@drawable/ic_buyer_rgb" />
+
+                                            <TextView
+                                                android:id="@+id/buyerTv"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:fontFamily="@font/nexalight"
+                                                android:text="As a Buyer"
+                                                android:textColor="@color/black" />
+                                        </LinearLayout>
+                                    </com.google.android.material.card.MaterialCardView>
+                                </LinearLayout>
                             </LinearLayout>
 
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
                             android:gravity="center"
-                            android:paddingLeft="10dp">
+                            android:orientation="horizontal">
 
                             <LinearLayout
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="80dp"
-                                android:gravity="center">
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:paddingRight="10dp">
 
                                 <com.google.android.material.card.MaterialCardView
                                     android:layout_width="match_parent"
                                     android:layout_height="70dp"
-                                    android:elevation="5dp"
                                     app:cardCornerRadius="8dp">
 
                                     <LinearLayout
-                                        android:id="@+id/buyerLlayout"
+                                        android:id="@+id/buyingHouseLlayout"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:gravity="center"
@@ -741,134 +774,79 @@
                                         <ImageView
                                             android:layout_width="20dp"
                                             android:layout_height="20dp"
-                                            app:srcCompat="@drawable/ic_buyer_rgb" />
+                                            app:srcCompat="@drawable/ic_buying_house_rgb" />
 
                                         <TextView
-                                            android:id="@+id/buyerTv"
+                                            android:id="@+id/buyinghouseTv"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:fontFamily="@font/nexalight"
-                                            android:text="As a Buyer"
+                                            android:text="As a Buying House"
                                             android:textColor="@color/black" />
                                     </LinearLayout>
                                 </com.google.android.material.card.MaterialCardView>
+
                             </LinearLayout>
-                        </LinearLayout>
 
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="80dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:paddingLeft="10dp">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="70dp"
+                                    android:elevation="5dp"
+                                    app:cardCornerRadius="8dp">
+
+                                    <LinearLayout
+                                        android:id="@+id/factoryLlayout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <ImageView
+                                            android:layout_width="20dp"
+                                            android:layout_height="20dp"
+                                            app:srcCompat="@drawable/ic_factory_rgb" />
+
+                                        <TextView
+                                            android:id="@+id/factoryTv"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/nexalight"
+                                            android:text="As a Factory"
+                                            android:textColor="@color/black" />
+
+                                    </LinearLayout>
+                                </com.google.android.material.card.MaterialCardView>
+                            </LinearLayout>
+
+                        </LinearLayout>
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:gravity="center"
-                        android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="80dp"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:paddingRight="10dp">
-
-                            <com.google.android.material.card.MaterialCardView
-                                android:layout_width="match_parent"
-                                android:layout_height="70dp"
-                                app:cardCornerRadius="8dp">
-
-                                <LinearLayout
-                                    android:id="@+id/buyingHouseLlayout"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:gravity="center"
-                                    android:orientation="vertical">
-
-                                    <ImageView
-                                        android:layout_width="20dp"
-                                        android:layout_height="20dp"
-                                        app:srcCompat="@drawable/ic_buying_house_rgb" />
-
-                                    <TextView
-                                        android:id="@+id/buyinghouseTv"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="@font/nexalight"
-                                        android:text="As a Buying House"
-                                        android:textColor="@color/black" />
-                                </LinearLayout>
-                            </com.google.android.material.card.MaterialCardView>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="80dp"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:paddingLeft="10dp">
-
-                            <com.google.android.material.card.MaterialCardView
-                                android:layout_width="match_parent"
-                                android:layout_height="70dp"
-                                android:elevation="5dp"
-                                app:cardCornerRadius="8dp">
-
-                                <LinearLayout
-                                    android:id="@+id/factoryLlayout"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:gravity="center"
-                                    android:orientation="vertical">
-
-                                    <ImageView
-                                        android:layout_width="20dp"
-                                        android:layout_height="20dp"
-                                        app:srcCompat="@drawable/ic_factory_rgb" />
-
-                                    <TextView
-                                        android:id="@+id/factoryTv"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="@font/nexalight"
-                                        android:text="As a Factory"
-                                        android:textColor="@color/black" />
-
-                                </LinearLayout>
-                            </com.google.android.material.card.MaterialCardView>
-                        </LinearLayout>
-
-                    </LinearLayout>
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:gravity="center">
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnNext"
-                        android:layout_width="match_parent"
-                        android:layout_height="57dp"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginRight="30dp"
-                        android:enabled="false"
-                        android:fontFamily="@font/nexalight"
-                        android:gravity="center"
-                        android:layoutDirection="rtl"
-                        android:text="Continue"
-                        android:textAllCaps="false"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        app:cornerRadius="20dp"
-                        app:icon="@drawable/ic_arrow_forward_white" />
-                </LinearLayout>
-
 
             </LinearLayout>
+        </ScrollView>
 
-        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom|end">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fav_continue_registration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_arrow_forward_white"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="16dp"
+            />
     </LinearLayout>
 
 </RelativeLayout>

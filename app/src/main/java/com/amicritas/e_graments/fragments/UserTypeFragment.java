@@ -23,6 +23,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.amicritas.e_graments.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Objects;
 
@@ -31,11 +33,11 @@ public class UserTypeFragment extends Fragment implements View.OnClickListener {
     private RadioGroup radioGroup;
     private TextView basicTv, asABuyerTv, buingHouseTv, factoryTv, tvAcTypeTitle;
     private CardView expandableView;
-    private Button btnNext;
     private LinearLayout buyerLlayout, buingHuseLlayout, factoryLlayout, basicLlayout,
             basicSelectLayout, buyerSelectLayout, buyingHouseSelectLayout, factorySelectLayout, noneSelectedLayout, selectLayout;
     private ImageView backButtonIv;
     private String userType="";
+    private FloatingActionButton fabContinueButton;
     //private RelativeLayout ;
 
 
@@ -60,7 +62,7 @@ public class UserTypeFragment extends Fragment implements View.OnClickListener {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        btnNext.setEnabled(true);
+                        fabContinueButton.setEnabled(true);
                     }
                 }, 200);
                 userType = "basic";
@@ -91,7 +93,7 @@ public class UserTypeFragment extends Fragment implements View.OnClickListener {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        btnNext.setEnabled(true);
+                        fabContinueButton.setEnabled(true);
                     }
                 }, 200);
                 userType = "buyer";
@@ -123,7 +125,7 @@ public class UserTypeFragment extends Fragment implements View.OnClickListener {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        btnNext.setEnabled(true);
+                        fabContinueButton.setEnabled(true);
                     }
                 }, 200);
                 userType = "buyingHouse";
@@ -155,7 +157,7 @@ public class UserTypeFragment extends Fragment implements View.OnClickListener {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        btnNext.setEnabled(true);
+                        fabContinueButton.setEnabled(true);
                     }
                 }, 200);
                 userType = "factory";
@@ -191,7 +193,7 @@ public class UserTypeFragment extends Fragment implements View.OnClickListener {
         buingHouseTv = view.findViewById(R.id.buyinghouseTv);
         factoryTv = view.findViewById(R.id.factoryTv);
         backButtonIv = view.findViewById(R.id.backButtonIv);
-        btnNext = view.findViewById(R.id.btnNext);
+        //btnNext = view.findViewById(R.id.btnNext);
         tvAcTypeTitle = view.findViewById(R.id.tvAcTypeTitle);
         basicLlayout = view.findViewById(R.id.basicLlayout);
         buyerLlayout = view.findViewById(R.id.buyerLlayout);
@@ -204,6 +206,7 @@ public class UserTypeFragment extends Fragment implements View.OnClickListener {
         factorySelectLayout = view.findViewById(R.id.factorySelectLayer);
         noneSelectedLayout = view.findViewById(R.id.noneSelectLayer);
         selectLayout = view.findViewById(R.id.selectedViewRelativeLayout);
+        fabContinueButton = view.findViewById(R.id.fav_continue_registration);
     }
 
     private void onBackButton() {
@@ -217,21 +220,26 @@ public class UserTypeFragment extends Fragment implements View.OnClickListener {
     }
 
     private void onButtonNext() {
-        btnNext.setOnClickListener(new View.OnClickListener() {
+        fabContinueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment selectedFragment = new RegistationFragment();
-                Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction().setCustomAnimations( R.anim.slide_in_right, R.anim.slide_out_right).replace(R.id.main_frame_login,
-                        selectedFragment).addToBackStack("tag").commit();
-                //Toast.makeText(getActivity(), userType, Toast.LENGTH_SHORT).show();
+                if (!userType.isEmpty()){
+                    Fragment selectedFragment = new RegistationFragment();
+                    Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction().setCustomAnimations( R.anim.slide_in_right, R.anim.slide_out_right).replace(R.id.main_frame_login,
+                            selectedFragment).addToBackStack("tag").commit();
+                    //Toast.makeText(getActivity(), userType, Toast.LENGTH_SHORT).show();
 
-                Bundle bundle = new Bundle();
-                bundle.putString("userType", userType);
-                selectedFragment.setArguments(bundle);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("userType", userType);
+                    selectedFragment.setArguments(bundle);
+                }else {
+                    Snackbar.make(getActivity().findViewById(android.R.id.content),"Select any type to continue",Snackbar.LENGTH_LONG).show();
+
+                    //Toast.makeText(getActivity(), "Select any type to continue", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
-
     @Override
     public void onClick(View v) {
 

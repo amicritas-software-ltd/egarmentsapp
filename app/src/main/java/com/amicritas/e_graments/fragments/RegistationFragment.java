@@ -1,11 +1,17 @@
 package com.amicritas.e_graments.fragments;
 
 
+import android.app.Dialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -19,6 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.amicritas.e_graments.R;
+import com.amicritas.e_graments.activitys.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -31,6 +38,8 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class RegistationFragment extends Fragment {
     private ImageView backButtonIv;
     private TextView tvSignIn, nameErrorTv, emailErrorTv, passwordErrorTv;
@@ -40,6 +49,8 @@ public class RegistationFragment extends Fragment {
     private FirebaseAuth mAuth;
     private LinearLayout progressLayout;
     private Matcher passwordMatcher, emailMatcher;
+    private Dialog myDialog;
+    private SharedPreferences sharedPreferences;
 
     private String passwordPattarn = "^" +
             //"(?=.*[0-9])" +         //at least 1 digit
@@ -66,6 +77,7 @@ public class RegistationFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_registation, container, false);
+        sharedPreferences = Objects.requireNonNull(getActivity()).getSharedPreferences("e_garments", MODE_PRIVATE);
 
         backButtonIv = view.findViewById(R.id.backButtonIv);
         tvSignIn = view.findViewById(R.id.tvSignIn);
@@ -78,19 +90,26 @@ public class RegistationFragment extends Fragment {
         passwordErrorTv = view.findViewById(R.id.tvErrorPasswordReg);
         progressLayout = view.findViewById(R.id.progressLayout);
 
-
+        myDialog = new Dialog(Objects.requireNonNull(getActivity()));
 
         mAuth = FirebaseAuth.getInstance();
 
         Bundle bundle = getArguments();
         String userType = bundle.getString("userType");
+        Boolean isSkip = bundle.getBoolean("skip");
 
-        Toast.makeText(getActivity(), ""+userType, Toast.LENGTH_SHORT).show();
+        if (isSkip.equals(true)){
+            pregressDyalog();
+            //setOnLogin(edtEmailReg,edtpasswordReg);
+        }  // when come back from payment layout to skip
 
-        setOnBackButton();
+        setOnBackButton(userType);
         setOnAlreadySignIn();
-        setOnSignUp();
+        setOnSignUp(userType);
         setFieldView(userType);
+
+
+//        myDialog.dismiss();
 
         TextWatcher textChange = new TextWatcher() {
             String nameSearchKey, phoneSearchKey, passwordsearchKey;
@@ -153,6 +172,50 @@ public class RegistationFragment extends Fragment {
 
     }
 
+    private void setOnLogin(EditText edtEmailReg, EditText edtpasswordReg) {
+        String email = edtEmailReg.getText().toString().trim();
+        String password = edtpasswordReg.getText().toString().trim();
+
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+                    onLoginSuccess();
+
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                progressLayout.setVisibility(View.GONE);
+                Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void onLoginSuccess() {
+        Intent intent = new Intent(getActivity(), MainActivity.class);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("loginType", true);
+        editor.apply();
+        editor.commit();
+        Objects.requireNonNull(getActivity()).finish();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //myDialog.dismiss();
+                startActivity(intent);
+            }
+        }, 1000);
+    }
+
+    private void pregressDyalog() {
+        myDialog.setContentView(R.layout.progress_layout);
+        Objects.requireNonNull(myDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        myDialog.show();
+    }
+
     private void setFieldView(String userType) {
         if (userType.equals("basic")){
             nameEt.setHint("Name");
@@ -166,7 +229,7 @@ public class RegistationFragment extends Fragment {
 
     }
 
-    private void setOnSignUp() {
+    private void setOnSignUp(String userType) {
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -178,7 +241,7 @@ public class RegistationFragment extends Fragment {
 
                     if (emailMatcher.matches() && passwordMatcher.matches()){
                         progressLayout.setVisibility(View.VISIBLE);
-                        createUser(userNameReg, userEmailReg, userPasswordReg);
+                        createUser(userNameReg, userEmailReg, userPasswordReg, userType);
                     }
                     else {
                         Toast.makeText(getActivity(), "Input all valid information", Toast.LENGTH_SHORT).show();
@@ -192,7 +255,7 @@ public class RegistationFragment extends Fragment {
         });
     }
 
-    private void createUser(String userNameReg, String userEmailReg, String userPasswordReg) {
+    private void createUser(String userNameReg, String userEmailReg, String userPasswordReg, String userType) {
         mAuth.createUserWithEmailAndPassword(userEmailReg, userPasswordReg)
                 .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
@@ -200,7 +263,7 @@ public class RegistationFragment extends Fragment {
                         if (task.isSuccessful()){
                             progressLayout.setVisibility(View.GONE);
                             Toast.makeText(getActivity(), "successful: ", Toast.LENGTH_SHORT).show();
-                            updateUserInfo(userNameReg, userEmailReg, userPasswordReg, mAuth.getCurrentUser());
+                            updateUserInfo(userNameReg, userEmailReg, userPasswordReg, mAuth.getCurrentUser(), userType);
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
@@ -214,14 +277,20 @@ public class RegistationFragment extends Fragment {
 
     }
 
-    private void updateUserInfo(String userNameReg, String userEmailReg, String userPasswordReg, FirebaseUser currentUser) {
+    private void updateUserInfo(String userNameReg, String userEmailReg, String userPasswordReg, FirebaseUser currentUser, String userType) {
         UserProfileChangeRequest profileUpdate = new UserProfileChangeRequest.Builder().setDisplayName(userNameReg).build();
 
         currentUser.updateProfile(profileUpdate).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
-                    //Toast.makeText(getActivity(), "profile update", Toast.LENGTH_SHORT).show();
+                    Fragment selectedFragment = new AccountPaymentFragment();
+                    Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction().setCustomAnimations( R.anim.slide_in_left, R.anim.slide_out_left).replace(R.id.main_frame_login,
+                            selectedFragment).addToBackStack("tag").commit();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("userType", userType);
+                    bundle.putString("userEmail", userEmailReg);
+                    bundle.putString("userPass", userPasswordReg);
 
                 }
             }
@@ -240,11 +309,17 @@ public class RegistationFragment extends Fragment {
         });
     }
 
-    private void setOnBackButton() {
+    private void setOnBackButton(String userType) {
         backButtonIv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Objects.requireNonNull(getActivity()).onBackPressed();
+                //Objects.requireNonNull(getActivity()).onBackPressed();
+                Fragment selectedFragment = new AccountPaymentFragment();
+                Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction().setCustomAnimations( R.anim.slide_in_left, R.anim.slide_out_left).replace(R.id.main_frame_login,
+                        selectedFragment).addToBackStack("tag").commit();
+                Bundle bundle = new Bundle();
+                bundle.putString("userType", userType);
+                selectedFragment.setArguments(bundle);
             }
         });
     }
