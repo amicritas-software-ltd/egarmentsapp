@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="Support">
+        <menu>
+            <item
+                android:id="@+id/nav_saftey_center"
+                android:icon="@drawable/ic_data_security"
+                android:title="Safety center" />
+
+        </menu>
+    </item>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_web"
+                android:icon="@drawable/ic_data_security"
+                android:title="Safety center" />
+
+        </menu>
+    </item>
+
+    <item android:title="Hello">
+        <menu>
+            <item
+                android:id="@+id/nav_uit"
+                android:icon="@drawable/ic_feedback"
+                android:title="Hello2" />
+
+        </menu>
+    </item>
+
+</menu>

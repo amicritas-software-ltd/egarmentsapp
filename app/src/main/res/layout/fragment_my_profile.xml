@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.MyProfileFragment"
+    android:background="#F6F6F6">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/layoutDetails"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent">
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true">
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:id="@+id/app_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="330dp"
+                    android:fitsSystemWindows="true"
+                    android:theme="@style/Theme.AppCompat.DayNight.Dialog">
+
+                    <com.google.android.material.appbar.CollapsingToolbarLayout
+                        android:id="@+id/toolbar_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="330dp"
+                        app:collapsedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
+                        app:contentScrim="@color/colorPrimary"
+                        app:expandedTitleGravity="center_horizontal"
+                        app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
+                        app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                        app:toolbarId="@+id/toolbar"
+                        app:layout_collapseMode="pin">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="330dp">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <com.scwang.wave.MultiWaveHeader
+                                    android:id="@+id/waveHeader"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="250dp"
+                                    app:mwhStartColor="@color/colorWaveStart"
+                                    app:mwhCloseColor="@color/colorWaveClose"
+                                    app:mwhWaves="MultiWave">
+
+                                </com.scwang.wave.MultiWaveHeader>
+                            </LinearLayout>  <!--wave layout-->
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="330dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <de.hdodenhof.circleimageview.CircleImageView
+                                        android:id="@+id/profile_image"
+                                        android:layout_width="130dp"
+                                        android:layout_height="130dp"
+                                        android:layout_marginTop="20dp"
+                                        android:src="@drawable/person"
+                                        app:civ_border_color="#fff"
+                                        app:civ_border_width=".5dp"
+                                        />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Estiak Ahmed"
+                                        android:textAlignment="center"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="20sp"
+                                        android:fontFamily="@font/nexabold"
+                                        android:layout_marginBottom="30dp"
+                                        android:layout_marginTop="10dp"/>
+
+                                    <LinearLayout
+                                        style="@style/Widget.MaterialComponents.CardView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="70dp"
+                                        android:orientation="horizontal"
+                                        android:padding="5dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_marginLeft="30dp"
+                                        android:layout_marginRight="30dp"
+                                        android:background="@drawable/notification_background_round">
+
+                                        <LinearLayout
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+                                            <LinearLayout
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp">
+                                                <RelativeLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent">
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:gravity="center">
+                                                        <ImageView
+                                                            android:layout_width="40dp"
+                                                            android:layout_height="40dp"
+                                                            app:srcCompat="@drawable/ic_premium"/>
+                                                    </LinearLayout>
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:gravity="end">
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:text=""
+                                                            android:layout_marginRight="7.5dp"
+                                                            android:textColor="@color/colorRed"
+                                                            android:textSize="15sp"
+                                                            />
+                                                    </LinearLayout>
+                                                </RelativeLayout>
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+                                        <LinearLayout
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+                                            <LinearLayout
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp">
+                                                <ImageView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    app:srcCompat="@drawable/ic_message_rgb"/>
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+                                        <LinearLayout
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+                                            <ImageView
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp"
+                                                app:srcCompat="@drawable/bell"/>
+
+                                        </LinearLayout>
+                                        <LinearLayout
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+                                            <ImageView
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp"
+                                                app:srcCompat="@drawable/verify"/>
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+                                </LinearLayout>  <!--img & name layout-->
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+
+                    </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+                </com.google.android.material.appbar.AppBarLayout>
+
+                <include
+                    layout="@layout/profile_details_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginTop="10dp"
+                    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+                    android:layout_marginBottom="40dp"/>
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

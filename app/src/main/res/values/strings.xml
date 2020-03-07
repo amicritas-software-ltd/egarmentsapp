@@ -27,5 +27,29 @@
     <string name="sign_up">Sign Up</string>
     <string name="sign_in">Sign In</string>
     <string name="profile">Profile</string>
+    <string name="phone_no">Phone No</string>
+    <string name="_8942">⋮</string>
+    <string name="update">Update profile</string>
+    <string name="unpublished">Unpublished</string>
+    <string name="delete">Delete</string>
+
+    <string name="place_api_key">AIzaSyB9MxxJBmzLHdfsMEZSdV0vORR_MRwirPI</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="this_pocketing">This Pocketing Cotton Fabric is widely utilized in textile and garment industries for sewing pockets.</string>
+    <string name="we_manufacturar"><![CDATA[We manufacture pocketing fabrics, for branded garments, made from superior quality 100% cotton, polyester cotton, polyester viscose and 100% polyester yarn. Due care is taken to avoid slippage problem & ensure high durability, shrinkage control, colour fastness, anti-pilling and soft feel after repeated washes.]]></string>
+    <string name="title_activity_main_drawer">MainDrawerActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
 
 </resources>

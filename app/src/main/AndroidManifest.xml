@@ -3,8 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.amicritas.e_graments">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,30 +10,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activitys.LoginUtilActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activitys.UserInformationUtilsActivity"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".activitys.UserProfileActivity"
-            android:label="@string/title_activity_user_profile"
-            android:theme="@style/NoActionBar"></activity>
-
-        <activity android:name=".activitys.UpdateProfileActivity" />
+            android:name=".activitys.UserUtilsActivity"
+            android:parentActivityName=".activitys.MainActivity"
+            android:theme="@style/UtilPageTheme"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activitys.PostActivity" />
+        <activity android:name=".activitys.VarifyActivity" />
+        <activity android:name=".activitys.MessengerDialogsListActivity" />
+        <activity android:name=".activitys.MessengerActivity" />
+        <activity
+            android:name=".activitys.ProductDetailsActivity"
+            android:label="E-garments" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <activity
+            android:name=".activitys.MapsActivity"
+            android:label="@string/title_activity_maps" />
         <activity android:name=".activitys.SetPasswordActivity" />
-        <activity android:name=".activitys.ProfileActivity" />
         <activity android:name=".activitys.LoginActivity" />
-        <activity android:name=".activitys.SlideActivity" />
-        <activity android:name=".modals.SwipeData" />
         <activity android:name=".activitys.SignUpActivity" />
-        <activity android:name=".activitys.PreSignUp" />
-
-        <meta-data
-            android:name="com.facebook.accountkit.ApplicationName"
-            android:value="@string/app_name" />
-        <meta-data
-            android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/FACEBOOK_APP_ID" />
-        <meta-data
-            android:name="com.facebook.accountkit.ClientToken"
-            android:value="@string/ACCOUNT_KIT_CLIENT_TOKEN" />
-
         <activity android:name="com.facebook.accountkit.ui.AccountKitActivity" />
         <activity android:name="com.facebook.accountkit.ui.AccountKitEmailRedirectActivity">
             <intent-filter>
@@ -58,6 +62,22 @@
             </intent-filter>
         </activity>
         <activity android:name=".activitys.MainActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="com.facebook.accountkit.ApplicationName"
+            android:value="@string/app_name" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/FACEBOOK_APP_ID" />
+        <meta-data
+            android:name="com.facebook.accountkit.ClientToken"
+            android:value="@string/ACCOUNT_KIT_CLIENT_TOKEN" />
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 </manifest>
